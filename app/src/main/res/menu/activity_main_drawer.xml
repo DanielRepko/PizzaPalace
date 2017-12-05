@@ -11,9 +11,9 @@
             android:icon="@drawable/ic_monetization_on_black_24dp"
             android:title="Current Specials" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_local_pizza_black_24dp"
+            android:title="Order" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
