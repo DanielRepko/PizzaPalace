@@ -1,8 +1,11 @@
 package com.jordan.daniel.pizzapalace;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,7 +17,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+                   DealsFragment.OnFragmentInteractionListener,
+                   DealFragment.OnFragmentInteractionListener{
+
+    FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        fm = getSupportFragmentManager();
+        if(savedInstanceState == null){
+            FragmentTransaction trans = fm.beginTransaction();
+            trans.replace(R.id.content, new MainFragment());
+            trans.commit();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -79,9 +93,12 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentTransaction trans = fm.beginTransaction();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
+        if (id == R.id.nav_home){
+            trans.replace(R.id.content, new MainFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         } else if (id == R.id.nav_sale) {
 
         } else if (id == R.id.nav_order) {
@@ -93,5 +110,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
