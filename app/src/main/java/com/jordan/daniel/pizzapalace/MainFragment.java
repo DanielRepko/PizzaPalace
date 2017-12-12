@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +67,42 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        CustomAdapter adapter = new CustomAdapter(getChildFragmentManager());
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.dealsContent);
+        viewPager.setAdapter(adapter);
+
+        return view;
+    }
+
+    /**
+     * Custom FragmentPagerAdapter to be used for the ViewPager
+     */
+    public class CustomAdapter extends FragmentPagerAdapter{
+        public CustomAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        /**
+         *
+         * @param position
+         * @return the content for the case specified by the position
+         * final product will return images labeled for reuse and modification
+         * but for now will return textviews
+         */
+        public Fragment getItem(int position){
+            switch(position){
+                case 0: return DealFragment.newInstance("placeholder1");
+                case 1: return DealFragment.newInstance("placeholder2");
+                case 2: return DealFragment.newInstance("placeholder3");
+                case 3: return DealFragment.newInstance("placeholder4");
+                default: return DealFragment.newInstance("placeholder default");
+            }
+        }
+
+        public int getCount(){
+            return 4;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
