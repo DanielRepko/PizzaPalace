@@ -20,11 +20,11 @@
         android:id="@+id/phoneButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Call" />
 
     <Button
         android:id="@+id/emailButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Email" />
 </LinearLayout>
