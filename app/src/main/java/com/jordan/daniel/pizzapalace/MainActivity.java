@@ -18,8 +18,9 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-                   DealFragment.OnFragmentInteractionListener,
-                   MainFragment.OnFragmentInteractionListener{
+                    DealFragment.OnFragmentInteractionListener,
+                    MainFragment.OnFragmentInteractionListener,
+                    ContactFragment.OnFragmentInteractionListener {
 
     FragmentManager fm;
 
@@ -104,7 +105,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
 
         } else if (id == R.id.nav_contact) {
-
+            trans.replace(R.id.content, new ContactFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
