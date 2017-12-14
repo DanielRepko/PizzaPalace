@@ -79,7 +79,9 @@ public class ContactFragment extends Fragment {
                 intent.putExtra(Intent.EXTRA_EMAIL, email);
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Issue with Pizza Order");
                 intent.putExtra(Intent.EXTRA_TEXT, "There was an issue with the pizza I was delivered.");
-
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
 
