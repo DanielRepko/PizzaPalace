@@ -70,6 +70,7 @@ public class ContactFragment extends Fragment {
 
         Button phoneButton = (Button) view.findViewById(R.id.phoneButton);
         Button emailButton = (Button) view.findViewById(R.id.emailButton);
+        Button facebookButton = (Button) view.findViewById(R.id.facebookButton);
 
         emailButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -89,6 +90,16 @@ public class ContactFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("tel:18006687325"));
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        facebookButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://fb.me/PizzaPalaceAndroid"));
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
