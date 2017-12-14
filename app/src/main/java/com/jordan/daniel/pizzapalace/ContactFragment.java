@@ -1,8 +1,10 @@
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,6 +70,18 @@ public class ContactFragment extends Fragment {
 
         Button phoneButton = (Button) view.findViewById(R.id.phoneButton);
         Button emailButton = (Button) view.findViewById(R.id.emailButton);
+
+        emailButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                String[] email = {"PizzaPalace@gmail.com"};
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, email);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Issue with Pizza Order");
+                intent.putExtra(Intent.EXTRA_TEXT, "There was an issue with the pizza I was delivered.");
+
+            }
+        });
 
         return view;
     }
