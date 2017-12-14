@@ -85,6 +85,16 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        phoneButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("tel:18006687325"));
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
         return view;
     }
 
