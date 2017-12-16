@@ -8,4 +8,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="timer_title">Delivery Timer</string>
+    <string name="timer_time_unit_label">min | sec</string>
+    <string name="timer_start_button">Start</string>
+    <string name="timer_stop_button">Stop</string>
+    <string name="timer_reset_button">Reset</string>
 </resources>
