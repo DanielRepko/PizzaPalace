@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                     DealFragment.OnFragmentInteractionListener,
                     MainFragment.OnFragmentInteractionListener,
-                    ContactFragment.OnFragmentInteractionListener {
+                    ContactFragment.OnFragmentInteractionListener,
+                    TimerFragment.OnFragmentInteractionListener{
 
     FragmentManager fm;
 
@@ -106,6 +107,10 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_contact) {
             trans.replace(R.id.content, new ContactFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_timer) {
+            trans.replace(R.id.content, new TimerFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
