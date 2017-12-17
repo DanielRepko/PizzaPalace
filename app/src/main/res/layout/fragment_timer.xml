@@ -11,36 +11,49 @@
         android:id="@+id/timerTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/timer_title" />
+        android:layout_weight="1"
+        android:text="@string/timer_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="@dimen/title_text_size" />
 
     <TextView
         android:id="@+id/timerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_weight="3"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="@dimen/timer_counter_text_size" />
 
     <TextView
         android:id="@+id/timerLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/timer_time_unit_label" />
+        android:layout_weight="1"
+        android:text="@string/timer_time_unit_label"
+        android:textAlignment="center"
+        android:textSize="@dimen/timer_unit_label_text_size" />
 
     <Button
         android:id="@+id/timerStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/timer_start_button" />
 
     <Button
         android:id="@+id/timerStop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/timer_stop_button" />
 
     <Button
         android:id="@+id/timerReset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/timer_reset_button" />
 
 </LinearLayout>
