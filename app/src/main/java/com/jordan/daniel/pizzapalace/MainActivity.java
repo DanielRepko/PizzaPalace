@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_tips) {
-            trans.replace(R.id.content, new ContactFragment());
+            trans.replace(R.id.content, new TipFragment());
             trans.addToBackStack(null);
             trans.commit();
         }
