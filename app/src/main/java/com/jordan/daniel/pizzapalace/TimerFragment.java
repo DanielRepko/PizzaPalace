@@ -79,9 +79,8 @@ public class TimerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
-                        .putExtra(AlarmClock.EXTRA_MESSAGE, "00:00")
-                        .putExtra(AlarmClock.EXTRA_LENGTH, 1800)
-                        .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
+                        .putExtra(AlarmClock.EXTRA_MESSAGE, "Delivery Timer")
+                        .putExtra(AlarmClock.EXTRA_LENGTH, 1800);
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(intent);
                 }
