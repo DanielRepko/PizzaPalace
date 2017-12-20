@@ -10,5 +10,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <string name="about_us_title">About Us</string>
+    <string name="about_us_text">Pizza Palace started out as a small family run business, but now is a small franchise with
+        several locations around Windsor Ontario. We here at Pizza Palace value fun, wholesome family
+        ideals, and delicious homemade-style pizza, and good times for all, all at a great price.
+        If you want to have a party, go out with your family, have a nice date, or even just enjoy a
+        quick slice, then Pizza Palace is the pizza place for you.</string>
 
 </resources>
