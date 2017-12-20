@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -67,12 +68,23 @@ public class TipFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tip, container, false);
 
-        EditText editCost = (EditText) view.findViewById(R.id.editCost);
-        EditText editPercent = (EditText) view.findViewById(R.id.editPercent);
-        EditText tipTotal = (EditText) view.findViewById(R.id.tipTotal);
+        final EditText editCost = (EditText) view.findViewById(R.id.editCost);
+        final EditText editPercent = (EditText) view.findViewById(R.id.editPercent);
+        final EditText tipTotal = (EditText) view.findViewById(R.id.tipTotal);
         Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
 
         tipTotal.setEnabled(false);
+
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if(!editCost.getText().toString().matches("") && !editPercent.getText().toString().matches("")) {
+                    double cost = Double.parseDouble(editCost.getText().toString());
+                    double percent = Double.parseDouble(editPercent.getText().toString()) / 100;
+                    double total = cost * percent;
+                    tipTotal.setText(Double.toString(total));
+                }
+            }
+        });
 
         return view;
     }
