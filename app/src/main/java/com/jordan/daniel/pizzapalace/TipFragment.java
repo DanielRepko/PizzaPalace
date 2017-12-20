@@ -70,6 +70,8 @@ public class TipFragment extends Fragment {
         EditText editPercent = (EditText) view.findViewById(R.id.editPercent);
         EditText tipTotal = (EditText) view.findViewById(R.id.tipTotal);
 
+        tipTotal.setEnabled(false);
+
         return view;
     }
 
