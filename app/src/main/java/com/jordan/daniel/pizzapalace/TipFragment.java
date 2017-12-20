@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 
 /**
@@ -65,7 +66,9 @@ public class TipFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tip, container, false);
 
-        
+        EditText editCost = (EditText) view.findViewById(R.id.editCost);
+        EditText editPercent = (EditText) view.findViewById(R.id.editPercent);
+        EditText tipTotal = (EditText) view.findViewById(R.id.tipTotal);
 
         return view;
     }
