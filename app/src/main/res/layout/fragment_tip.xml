@@ -62,12 +62,12 @@
             android:text="Total Tip:" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/tipTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="none" />
     </LinearLayout>
 
 </LinearLayout>
