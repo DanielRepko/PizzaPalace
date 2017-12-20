@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                     DealFragment.OnFragmentInteractionListener,
                     MainFragment.OnFragmentInteractionListener,
-                    ContactFragment.OnFragmentInteractionListener{
+                    ContactFragment.OnFragmentInteractionListener,
+                    OrderFragment.OnFragmentInteractionListener{
 
     FragmentManager fm;
 
@@ -103,7 +104,9 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_sale) {
-
+            trans.replace(R.id.content, new OrderFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         } else if (id == R.id.nav_order) {
 
         } else if (id == R.id.nav_contact) {
@@ -111,9 +114,6 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_timer) {
-            /*trans.replace(R.id.content, new TimerFragment());
-            trans.addToBackStack(null);
-            trans.commit();*/
             Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
                     .putExtra(AlarmClock.EXTRA_MESSAGE, "Delivery Timer")
                     .putExtra(AlarmClock.EXTRA_LENGTH, 1800);
