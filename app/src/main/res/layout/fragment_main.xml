@@ -27,6 +27,7 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:text="@string/about_us_text"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="@dimen/about_us_text_size" />
 
 </LinearLayout>
