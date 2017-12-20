@@ -1,7 +1,9 @@
 package com.jordan.daniel.pizzapalace;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -20,8 +22,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
                     DealFragment.OnFragmentInteractionListener,
                     MainFragment.OnFragmentInteractionListener,
-                    ContactFragment.OnFragmentInteractionListener,
-                    TimerFragment.OnFragmentInteractionListener{
+                    ContactFragment.OnFragmentInteractionListener{
 
     FragmentManager fm;
 
@@ -110,9 +111,15 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_timer) {
-            trans.replace(R.id.content, new TimerFragment());
+            /*trans.replace(R.id.content, new TimerFragment());
             trans.addToBackStack(null);
-            trans.commit();
+            trans.commit();*/
+            Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
+                    .putExtra(AlarmClock.EXTRA_MESSAGE, "Delivery Timer")
+                    .putExtra(AlarmClock.EXTRA_LENGTH, 1800);
+            if(intent.resolveActivity(getPackageManager()) != null){
+                startActivity(intent);
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
