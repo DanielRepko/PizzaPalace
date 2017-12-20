@@ -22,6 +22,10 @@
             android:id="@+id/nav_tips"
             android:icon="@drawable/ic_attach_money_black_24dp"
             android:title="Tips" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/ic_timer_black_24dp"
+            android:title="Delivery Timer" />
     </group>
 
 </menu>
