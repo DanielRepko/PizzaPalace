@@ -17,4 +17,13 @@
         If you want to have a party, go out with your family, have a nice date, or even just enjoy a
         quick slice, then Pizza Palace is the pizza place for you.</string>
 
+    <!--Menu Strings-->
+    <string name="menu_home">Home</string>
+    <string name="menu_sale">Current Specials</string>
+    <string name="menu_order">Order</string>
+    <string name="menu_contact">Contact</string>
+    <string name="menu_tips">Tips</string>
+    <string name="menu_timer">Delivery Timer</string>
+    <string name="menu_location">Locate Nearest Store</string>
+
 </resources>
