@@ -104,11 +104,11 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_sale) {
+
+        } else if (id == R.id.nav_order) {
             trans.replace(R.id.content, new OrderFragment());
             trans.addToBackStack(null);
             trans.commit();
-        } else if (id == R.id.nav_order) {
-
         } else if (id == R.id.nav_contact) {
             trans.replace(R.id.content, new ContactFragment());
             trans.addToBackStack(null);
