@@ -18,6 +18,16 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
+    <!--<android.support.v7.widget.DropDownListView
+        android:id="@+id/sizeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>
+
+    <android.support.v7.widget.DropDownListView
+        android:id="@+id/typeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>-->
+
     <GridView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -55,13 +65,5 @@
         android:layout_height="wrap_content"
         android:text="Button" />
 
-    <!--<android.support.v7.widget.DropDownListView
-        android:id="@+id/sizeListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>
 
-    <android.support.v7.widget.DropDownListView
-        android:id="@+id/typeListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>-->
 </LinearLayout>
