@@ -6,31 +6,44 @@
     tools:context="com.jordan.daniel.pizzapalace.OrderFragment">
 
 
-    <TextView
+    <EditText
         android:id="@+id/orderTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:editable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:freezesText="false"
+        android:inputType="textPersonName"
+        android:text="@string/order_title_text"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/sizeLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/order_size_label" />
 
-    <!--<android.support.v7.widget.DropDownListView
-        android:id="@+id/sizeListView"
+    <Spinner
+        android:id="@+id/sizeSpinner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/sizeLabel" />
 
-    <android.support.v7.widget.DropDownListView
-        android:id="@+id/typeListView"
+    <TextView
+        android:id="@+id/typeLabel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.DropDownListView>-->
+        android:layout_height="wrap_content"
+        android:text="@string/order_type_label" />
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,21 +55,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="@string/order_payment_method_label" />
 
         <CheckBox
             android:id="@+id/optionCash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CheckBox" />
+            android:text="@string/order_payment_method_cash" />
 
         <CheckBox
             android:id="@+id/optionCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CheckBox" />
+            android:text="@string/order_payment_method_card" />
     </LinearLayout>
 
     <Button
