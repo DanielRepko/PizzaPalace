@@ -125,6 +125,13 @@ public class MainActivity extends AppCompatActivity
             if(intent.resolveActivity(getPackageManager()) != null){
                 startActivity(intent);
             }
+        } else if (id == R.id.nav_location) {
+            Uri location = Uri.parse("geo:0,0?q=42.2463450,-83.0191849(Pizza Palace)");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(location);
+            if(intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
