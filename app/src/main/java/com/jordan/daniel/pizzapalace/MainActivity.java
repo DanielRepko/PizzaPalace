@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity
                     DealFragment.OnFragmentInteractionListener,
                     MainFragment.OnFragmentInteractionListener,
                     ContactFragment.OnFragmentInteractionListener,
-                    OrderFragment.OnFragmentInteractionListener{
+                    OrderFragment.OnFragmentInteractionListener,
+                    TipFragment.OnFragmentInteractionListener {
+
 
     FragmentManager fm;
 
@@ -113,11 +115,22 @@ public class MainActivity extends AppCompatActivity
             trans.replace(R.id.content, new ContactFragment());
             trans.addToBackStack(null);
             trans.commit();
+        } else if (id == R.id.nav_tips) {
+            trans.replace(R.id.content, new TipFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         } else if (id == R.id.nav_timer) {
             Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
                     .putExtra(AlarmClock.EXTRA_MESSAGE, "Delivery Timer")
                     .putExtra(AlarmClock.EXTRA_LENGTH, 1800);
             if(intent.resolveActivity(getPackageManager()) != null){
+                startActivity(intent);
+            }
+        } else if (id == R.id.nav_location) {
+            Uri location = Uri.parse("geo:0,0?q=42.2463450,-83.0191849(Pizza Palace)");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(location);
+            if(intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
         }
