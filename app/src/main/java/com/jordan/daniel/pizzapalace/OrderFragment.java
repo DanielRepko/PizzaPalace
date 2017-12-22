@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -64,7 +68,30 @@ public class OrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false);
+        View view = inflater.inflate(R.layout.fragment_order, container, false);
+
+        GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
+
+        ArrayList<String> labels = new ArrayList<>();
+        labels.add("@string/order_toppings_label_pepperoni");
+        labels.add("@string/order_toppings_label_bacon");
+        labels.add("@string/order_toppings_label_ham");
+        labels.add("@string/order_toppings_label_pineapple");
+        labels.add("@string/order_toppings_label_hamburger");
+        labels.add("@string/order_toppings_label_mushrooms");
+        labels.add("@string/order_toppings_label_anchovies");
+        labels.add("@string/order_toppings_label_green_olives");
+        labels.add("@string/order_toppings_label_black_olives");
+        labels.add("@string/order_toppings_label_peppers");
+        labels.add("@string/order_toppings_label_onions");
+        labels.add("@string/order_toppings_label_sausage");
+        labels.add("@string/order_toppings_label_spinach");
+        labels.add("@string/order_toppings_label_extra_cheese");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),R.layout.order_toppings_row,labels);
+        toppingsGridView.setAdapter(adapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
