@@ -16,13 +16,15 @@
         android:freezesText="false"
         android:inputType="textPersonName"
         android:text="@string/order_title_text"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="@dimen/title_text_size" />
 
     <TextView
         android:id="@+id/sizeLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order_size_label" />
+        android:text="@string/order_size_label"
+        android:textSize="@dimen/order_label_text_size" />
 
     <Spinner
         android:id="@+id/sizeSpinner"
@@ -34,7 +36,8 @@
         android:id="@+id/typeLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order_type_label" />
+        android:text="@string/order_type_label"
+        android:textSize="@dimen/order_label_text_size" />
 
     <Spinner
         android:id="@+id/typeSpinner"
@@ -45,7 +48,8 @@
         android:id="@+id/toppingsLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order_toppings_header" />
+        android:text="@string/order_toppings_header"
+        android:textSize="@dimen/order_label_text_size" />
 
     <GridView
         android:id="@+id/toppingsGridView"
@@ -63,7 +67,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/order_payment_method_label" />
+            android:text="@string/order_payment_method_label"
+            android:textSize="@dimen/order_label_text_size" />
 
         <CheckBox
             android:id="@+id/optionCash"
