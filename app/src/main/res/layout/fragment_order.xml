@@ -41,6 +41,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/toppingsLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_toppings_header" />
+
     <GridView
         android:id="@+id/toppingsGridView"
         android:layout_width="match_parent"
