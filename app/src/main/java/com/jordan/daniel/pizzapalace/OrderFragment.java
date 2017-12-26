@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -92,6 +93,32 @@ public class OrderFragment extends Fragment {
         toppingsGridView.setAdapter(adapter);
 
         return view;
+    }
+
+    public class CustomAdapter extends ArrayAdapter{
+
+        ArrayList<String> labels = new ArrayList<>();
+
+        public CustomAdapter(Context context, int textViewResourceId, ArrayList objects){
+            super(context, textViewResourceId, objects);
+            labels = objects;
+        }
+
+        @Override
+        public int getCount() {
+            return super.getCount();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent){
+            View view = convertView;
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.order_toppings_row, null);
+            CheckBox checkBox = (CheckBox) view.findViewById(R.id.toppingCheckBox);
+            checkBox.setText(labels.get(position));
+            return view;
+
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
