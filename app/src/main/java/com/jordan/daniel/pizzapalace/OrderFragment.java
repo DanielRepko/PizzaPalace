@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.GridView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 
@@ -70,9 +71,10 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
-
+        //gridview for checkboxes
         GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
+        //ArrayList for checkbox labels with references to string values inside strings.xml
         ArrayList<Integer> labels = new ArrayList<>();
         labels.add(R.string.order_toppings_label_pepperoni);
         labels.add(R.string.order_toppings_label_bacon);
@@ -89,12 +91,28 @@ public class OrderFragment extends Fragment {
         labels.add(R.string.order_toppings_label_spinach);
         labels.add(R.string.order_toppings_label_extra_cheese);
 
-       CustomAdapter adapter = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
-       toppingsGridView.setAdapter(adapter);
+        //CustomAdapter for toppingsGridView
+        CustomAdapter adapter = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
+        toppingsGridView.setAdapter(adapter);
+
+        //spinner for size options
+        Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
+
+        //ArrayList for sizeSpinner with references to string values inside strings.xml\
+        ArrayList<Integer> sizes = new ArrayList<>();
+        sizes.add(R.string.order_size_small);
+        sizes.add(R.string.order_size_medium);
+        sizes.add(R.string.order_size_large);
+
+        //Adapter for sizeSpinner
+
 
         return view;
     }
 
+    /**
+     * This is to allow checkboxes to be placed inside of toppingsGridView
+     */
     public class CustomAdapter extends ArrayAdapter{
 
         ArrayList<Integer> labels = new ArrayList<>();

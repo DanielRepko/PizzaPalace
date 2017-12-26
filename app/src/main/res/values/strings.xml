@@ -19,8 +19,14 @@
 
     <!-- strings for the order page -->
     <string name="order_title_text">Place Order</string>
+
     <string name="order_size_label">Size:</string>
+    <string name="order_size_small">Small</string>
+    <string name="order_size_medium">Medium</string>
+    <string name="order_size_large">Large</string>
+
     <string name="order_type_label">Type:</string>
+
     <string name="order_toppings_header">Toppings:</string>
     <string name="order_toppings_label_pepperoni">Pepperoni</string>
     <string name="order_toppings_label_bacon">Bacon</string>
@@ -36,9 +42,11 @@
     <string name="order_toppings_label_sausage">Sausage</string>
     <string name="order_toppings_label_spinach">Spinach</string>
     <string name="order_toppings_label_extra_cheese">Extra Cheese</string>
+
     <string name="order_payment_method_label">Payment Method:</string>
     <string name="order_payment_method_cash">Cash</string>
     <string name="order_payment_method_card">Card</string>
+
     <string name="order_submit_button">Submit</string>
 
 </resources>
