@@ -54,7 +54,7 @@
     <GridView
         android:id="@+id/toppingsGridView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:numColumns="2" />
 
     <LinearLayout
