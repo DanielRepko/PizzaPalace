@@ -73,21 +73,21 @@ public class OrderFragment extends Fragment {
 
         GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
-        ArrayList<String> labels = new ArrayList<>();
-        labels.add("@string/order_toppings_label_pepperoni");
-        labels.add("@string/order_toppings_label_bacon");
-        labels.add("@string/order_toppings_label_ham");
-        labels.add("@string/order_toppings_label_pineapple");
-        labels.add("@string/order_toppings_label_hamburger");
-        labels.add("@string/order_toppings_label_mushrooms");
-        labels.add("@string/order_toppings_label_anchovies");
-        labels.add("@string/order_toppings_label_green_olives");
-        labels.add("@string/order_toppings_label_black_olives");
-        labels.add("@string/order_toppings_label_peppers");
-        labels.add("@string/order_toppings_label_onions");
-        labels.add("@string/order_toppings_label_sausage");
-        labels.add("@string/order_toppings_label_spinach");
-        labels.add("@string/order_toppings_label_extra_cheese");
+        ArrayList<Integer> labels = new ArrayList<>();
+        labels.add(R.string.order_toppings_label_pepperoni);
+        labels.add(R.string.order_toppings_label_bacon);
+        labels.add(R.string.order_toppings_label_ham);
+        labels.add(R.string.order_toppings_label_pineapple);
+        labels.add(R.string.order_toppings_label_hamburger);
+        labels.add(R.string.order_toppings_label_mushrooms);
+        labels.add(R.string.order_toppings_label_anchovies);
+        labels.add(R.string.order_toppings_label_green_olives);
+        labels.add(R.string.order_toppings_label_black_olives);
+        labels.add(R.string.order_toppings_label_peppers);
+        labels.add(R.string.order_toppings_label_onions);
+        labels.add(R.string.order_toppings_label_sausage);
+        labels.add(R.string.order_toppings_label_spinach);
+        labels.add(R.string.order_toppings_label_extra_cheese);
 
        CustomAdapter adapter = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
        toppingsGridView.setAdapter(adapter);
@@ -97,7 +97,7 @@ public class OrderFragment extends Fragment {
 
     public class CustomAdapter extends ArrayAdapter{
 
-        ArrayList<String> labels = new ArrayList<>();
+        ArrayList<Integer> labels = new ArrayList<>();
 
         public CustomAdapter(Context context, int textViewResourceId, ArrayList objects){
             super(context, textViewResourceId, objects);
