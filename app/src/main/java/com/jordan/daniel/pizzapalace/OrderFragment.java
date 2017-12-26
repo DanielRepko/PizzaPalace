@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -92,8 +93,8 @@ public class OrderFragment extends Fragment {
         labels.add(R.string.order_toppings_label_extra_cheese);
 
         //CustomAdapter for toppingsGridView
-        CustomAdapter adapter = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
-        toppingsGridView.setAdapter(adapter);
+        CustomAdapter adapter1 = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
+        toppingsGridView.setAdapter(adapter1);
 
         //spinner for size options
         Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
@@ -105,13 +106,14 @@ public class OrderFragment extends Fragment {
         sizes.add(R.string.order_size_large);
 
         //Adapter for sizeSpinner
-
+        CustomSpinnerAdapter adapter2 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, sizes);
+        sizeSpinner.setAdapter(adapter2);
 
         return view;
     }
 
     /**
-     * This is to allow checkboxes to be placed inside of toppingsGridView
+     * This is allows checkboxes to be placed inside of toppingsGridView
      */
     public class CustomAdapter extends ArrayAdapter{
 
@@ -134,6 +136,29 @@ public class OrderFragment extends Fragment {
             CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.toppingCheckBox);
             checkBox.setText(labels.get(position));
             convertView = checkBox;
+            return convertView;
+
+        }
+    }
+
+    /**
+     * This allows TextViews that reference strings.xml values to be placed inside the spinners
+     */
+    public class CustomSpinnerAdapter extends ArrayAdapter{
+        ArrayList<Integer> labels = new ArrayList<>();
+
+        public CustomSpinnerAdapter(Context context, int textViewResourceId, ArrayList objects){
+            super(context, textViewResourceId, objects);
+            labels = objects;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent){
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.order_spinner_item, null);
+            TextView spinnerText = (TextView) convertView.findViewById(R.id.spinnerText);
+            spinnerText.setText(labels.get(position));
+            convertView = spinnerText;
             return convertView;
 
         }
