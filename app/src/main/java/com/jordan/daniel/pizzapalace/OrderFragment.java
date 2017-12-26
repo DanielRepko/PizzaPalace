@@ -90,7 +90,7 @@ public class OrderFragment extends Fragment {
         labels.add("@string/order_toppings_label_extra_cheese");
 
        CustomAdapter adapter = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
-        toppingsGridView.setAdapter(adapter);
+       toppingsGridView.setAdapter(adapter);
 
         return view;
     }
@@ -104,7 +104,10 @@ public class OrderFragment extends Fragment {
             labels = objects;
         }
 
-        
+        @Override
+        public int getCount() {
+            return super.getCount();
+        }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent){
@@ -112,6 +115,7 @@ public class OrderFragment extends Fragment {
             convertView = inflater.inflate(R.layout.order_toppings_row, null);
             CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.toppingCheckBox);
             checkBox.setText(labels.get(position));
+            convertView = checkBox;
             return convertView;
 
         }
