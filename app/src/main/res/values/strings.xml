@@ -39,5 +39,6 @@
     <string name="order_payment_method_label">Payment Method:</string>
     <string name="order_payment_method_cash">Cash</string>
     <string name="order_payment_method_card">Card</string>
+    <string name="order_submit_button">Submit</string>
 
 </resources>
