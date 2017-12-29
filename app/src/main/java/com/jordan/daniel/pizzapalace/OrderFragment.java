@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.GridView;
@@ -145,6 +146,21 @@ public class OrderFragment extends Fragment {
         CustomSpinnerAdapter adapter3 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, types);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter3);
+
+        /**
+         * The purpose of this onItemClickListener is to check off the CheckBoxes of the
+         * appropriate toppings according to what type is selected in the type spinner
+         *
+         * Ex. is the item for Meat Lover's inside typeSpinner is selected, then the
+         * CheckBoxes for pepperoni, bacon, ham, hamburger, and sausage will be checked off
+         */
+
+        typeSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                
+            }
+        });
 
 
         return view;
