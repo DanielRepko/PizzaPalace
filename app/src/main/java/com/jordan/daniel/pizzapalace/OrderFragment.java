@@ -107,7 +107,7 @@ public class OrderFragment extends Fragment {
 
         //Adapter for sizeSpinner
         CustomSpinnerAdapter adapter2 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, sizes);
-        adapter2.setDropDownViewResource( R.layout.order_spinner_item);
+        adapter2.setDropDownViewResource(R.layout.order_spinner_item);
         sizeSpinner.setAdapter(adapter2);
 
 
