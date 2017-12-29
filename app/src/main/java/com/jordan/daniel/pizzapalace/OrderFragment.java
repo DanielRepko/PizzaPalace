@@ -107,7 +107,10 @@ public class OrderFragment extends Fragment {
 
         //Adapter for sizeSpinner
         CustomSpinnerAdapter adapter2 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, sizes);
+        adapter2.setDropDownViewResource( R.layout.order_spinner_item);
         sizeSpinner.setAdapter(adapter2);
+
+
 
         return view;
     }
@@ -151,6 +154,7 @@ public class OrderFragment extends Fragment {
             super(context, textViewResourceId, objects);
             labels = objects;
         }
+
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent){
