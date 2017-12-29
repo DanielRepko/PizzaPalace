@@ -21,9 +21,6 @@
     <string name="order_title_text">Place Order</string>
 
     <string name="order_size_label">Size:</string>
-    <string name="order_size_small">Small</string>
-    <string name="order_size_medium">Medium</string>
-    <string name="order_size_large">Large</string>
 
     <string name="order_type_label">Type:</string>
     <string name="order_toppings_header">Toppings:</string>

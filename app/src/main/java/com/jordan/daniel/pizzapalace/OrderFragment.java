@@ -100,14 +100,14 @@ public class OrderFragment extends Fragment {
         Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
 
         //ArrayList for sizeSpinner with references to string values inside strings.xml\
-        ArrayList<Integer> sizes = new ArrayList<>();
-        sizes.add(R.string.order_size_small);
-        sizes.add(R.string.order_size_medium);
-        sizes.add(R.string.order_size_large);
+        ArrayList<String> sizes = new ArrayList<>();
+        sizes.add("Small");
+        sizes.add("Medium");
+        sizes.add("Large");
 
         //Adapter for sizeSpinner
         CustomSpinnerAdapter adapter2 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, sizes);
-        adapter2.setDropDownViewResource(R.layout.order_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sizeSpinner.setAdapter(adapter2);
 
 
@@ -148,7 +148,7 @@ public class OrderFragment extends Fragment {
      * This allows TextViews that reference strings.xml values to be placed inside the spinners
      */
     public class CustomSpinnerAdapter extends ArrayAdapter{
-        ArrayList<Integer> labels = new ArrayList<>();
+        ArrayList<String> labels = new ArrayList<>();
 
         public CustomSpinnerAdapter(Context context, int textViewResourceId, ArrayList objects){
             super(context, textViewResourceId, objects);
