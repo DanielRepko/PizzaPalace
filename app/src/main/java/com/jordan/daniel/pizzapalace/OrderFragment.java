@@ -136,7 +136,7 @@ public class OrderFragment extends Fragment {
         toppings.add("Ham");
         pizzas.add(new Pizza("Hawaiian", toppings));
 
-        Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
+        final Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 
         ArrayList<String> types = new ArrayList<>();
         types.add("-- Custom --");
@@ -148,17 +148,22 @@ public class OrderFragment extends Fragment {
         typeSpinner.setAdapter(adapter3);
 
         /**
-         * The purpose of this onItemClickListener is to check off the CheckBoxes of the
+         * The purpose of this onItemSelectedListener is to check off the CheckBoxes of the
          * appropriate toppings according to what type is selected in the type spinner
          *
          * Ex. is the item for Meat Lover's inside typeSpinner is selected, then the
          * CheckBoxes for pepperoni, bacon, ham, hamburger, and sausage will be checked off
          */
 
-        typeSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
