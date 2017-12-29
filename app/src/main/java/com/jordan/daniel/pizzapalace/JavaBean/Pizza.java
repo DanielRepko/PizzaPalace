@@ -3,7 +3,8 @@ package com.jordan.daniel.pizzapalace.JavaBean;
 import java.util.ArrayList;
 
 /**
- * Created by awsom on 12/29/2017.
+ * This object is used to bring information from the Pizza
+ * ListView page over to the Order page.
  */
 
 public class Pizza {
@@ -12,6 +13,22 @@ public class Pizza {
 
     public Pizza(String name, ArrayList<String> toppings){
         this.name = name;
+        this.toppings = toppings;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<String> getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(ArrayList<String> toppings) {
         this.toppings = toppings;
     }
 }
