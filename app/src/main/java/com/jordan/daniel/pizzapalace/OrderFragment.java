@@ -18,6 +18,8 @@ import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
 
 import java.util.ArrayList;
 
+import static android.view.View.FIND_VIEWS_WITH_TEXT;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,7 +78,7 @@ public class OrderFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
         //gridview for checkboxes
-        GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
+        final GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
         //ArrayList for checkbox labels with references to string values inside strings.xml
         ArrayList<Integer> labels = new ArrayList<>();
@@ -98,6 +100,8 @@ public class OrderFragment extends Fragment {
         //CustomAdapter for toppingsGridView
         CustomAdapter adapter1 = new CustomAdapter(getContext(),R.layout.order_toppings_row,labels);
         toppingsGridView.setAdapter(adapter1);
+
+
 
         //spinner for size options
         Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
@@ -121,20 +125,20 @@ public class OrderFragment extends Fragment {
          * Pizza List page, but for now will be manually filled inside of
          * OrderFragment purely for testing purposes
          */
-        ArrayList<Pizza> pizzas = new ArrayList<>();
-        ArrayList<String> toppings = new ArrayList<>();
+        final ArrayList<Pizza> pizzas = new ArrayList<>();
+        ArrayList<String> toppings1 = new ArrayList<>();
 
-        toppings.add("Pepperoni");
-        toppings.add("Bacon");
-        toppings.add("Ham");
-        toppings.add("Hamburger");
-        toppings.add("Sausage");
-        pizzas.add(new Pizza("Meat Lover's", toppings));
+        toppings1.add("Pepperoni");
+        toppings1.add("Bacon");
+        toppings1.add("Ham");
+        toppings1.add("Hamburger");
+        toppings1.add("Sausage");
+        pizzas.add(new Pizza("Meat Lover's", toppings1));
 
-        toppings.clear();
-        toppings.add("Pineapple");
-        toppings.add("Ham");
-        pizzas.add(new Pizza("Hawaiian", toppings));
+        ArrayList<String> toppings2 = new ArrayList<>();
+        toppings2.add("Pineapple");
+        toppings2.add("Ham");
+        pizzas.add(new Pizza("Hawaiian", toppings2));
 
         final Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 
@@ -158,7 +162,33 @@ public class OrderFragment extends Fragment {
         typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(typeSpinner.getSelectedItem().toString() == "-- Custom --"){
+                    //Custom means that no toppings need to be automatically selected, do nothing
+                } else {
+                    Pizza pizza = new Pizza();
+                    //iterate through pizzas to find the pizza that is selected
+                    for(int i = 0; i < pizzas.size(); i++){
+                        if(pizzas.get(i).getName() == typeSpinner.getSelectedItem().toString()){
+                            pizza = pizzas.get(i);
+                        }
+                    }
+                    //iterate through all of the CheckBoxes inside toppingsGridView
+                    for(int i = 0; i < toppingsGridView.getChildCount(); i++){
+                        //CheckBox checkBox = view.find(toppingsGridView.getChildAt(1).getId());
 
+                        CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+                        //iterate through the toppings ArrayList inside of pizza
+                        for(int j = 0; j < pizza.getToppings().size(); j++){
+                            if(checkBox.getText().toString().equals(pizza.getToppings().get(j))){
+                                checkBox.setChecked(true);
+                                break;
+                            } else {
+                                checkBox.setChecked(false);
+                            }
+                        }
+                    }
+
+                }
             }
 
             @Override

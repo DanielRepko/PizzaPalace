@@ -11,6 +11,8 @@ public class Pizza {
     private String name;
     private ArrayList<String> toppings;
 
+    public Pizza(){}
+
     public Pizza(String name, ArrayList<String> toppings){
         this.name = name;
         this.toppings = toppings;
