@@ -13,6 +13,8 @@ import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
+
 import java.util.ArrayList;
 
 
@@ -110,6 +112,39 @@ public class OrderFragment extends Fragment {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sizeSpinner.setAdapter(adapter2);
 
+        /**
+         * ArrayList to store all of the pizza types inside of the
+         * ListView on the Pizza List page
+         *
+         * NOTE: final product will loop through the ListView on the
+         * Pizza List page, but for now will be manually filled inside of
+         * OrderFragment purely for testing purposes
+         */
+        ArrayList<Pizza> pizzas = new ArrayList<>();
+        ArrayList<String> toppings = new ArrayList<>();
+
+        toppings.add("Pepperoni");
+        toppings.add("Bacon");
+        toppings.add("Ham");
+        toppings.add("Hamburger");
+        toppings.add("Sausage");
+        pizzas.add(new Pizza("Meat Lover's", toppings));
+
+        toppings.clear();
+        toppings.add("Pineapple");
+        toppings.add("Ham");
+        pizzas.add(new Pizza("Hawaiian", toppings));
+
+        Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
+
+        ArrayList<String> types = new ArrayList<>();
+        types.add("-- Custom --");
+        for(int i = 0; i < pizzas.size(); i++){
+            types.add(pizzas.get(i).getName());
+        }
+        CustomSpinnerAdapter adapter3 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, types);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeSpinner.setAdapter(adapter3);
 
 
         return view;
