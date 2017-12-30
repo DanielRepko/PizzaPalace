@@ -35,6 +35,9 @@ public class OrderFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    Double cost = 0.0;
+    Double total = cost * 1.13;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -77,6 +80,10 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+
+        //variables for cost and total
+
+
         //gridview for checkboxes
         final GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
@@ -104,7 +111,7 @@ public class OrderFragment extends Fragment {
 
 
         //spinner for size options
-        Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
+        final Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
 
         //ArrayList for sizeSpinner with references to string values inside strings.xml\
         ArrayList<String> sizes = new ArrayList<>();
@@ -150,6 +157,23 @@ public class OrderFragment extends Fragment {
         CustomSpinnerAdapter adapter3 = new CustomSpinnerAdapter(getContext(), R.layout.order_spinner_item, types);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter3);
+
+
+        /**
+         * the purpose of this onItemSelectedListener is to check what size is selected
+         * and then pass that on to the costText to calculate the cost of the pizza
+         */
+        sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         /**
          * The purpose of this onItemSelectedListener is to check off the CheckBoxes of the
@@ -199,6 +223,42 @@ public class OrderFragment extends Fragment {
 
 
         return view;
+    }
+
+    /**
+     * This method checks the selected pizza size, as well as the selected toppings,
+     * calculates the combined cost of the items, and returns the result
+     *
+     * @param size The string value of the selected size
+     * @param toppings The GridView containing the toppings checkboxes
+     */
+    public Double calculateCost(String size, GridView toppings){
+        Double cost = 0.0;
+
+        //check the size and setting the value of cost accordingly
+        switch(size){
+            case "Small":
+                cost = 9.99;
+                break;
+            case "Medium":
+                cost = 12.99;
+                break;
+            case "Large":
+                cost = 14.99;
+                break;
+            default:
+                break;
+        }
+
+        //iterate through all the CheckBoxes in the GridView
+        for(int i = 0; i < toppings.getChildCount(); i++){
+            CheckBox checkBox = (CheckBox) toppings.getChildAt(i);
+            if(checkBox.isChecked() == true){
+                cost += 1.99;
+            }
+        }
+
+        return cost;
     }
 
     /**
