@@ -90,7 +90,7 @@
     <LinearLayout
         android:id="@+id/costLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -98,21 +98,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:labelFor="@id/costText"
-            android:text="TextView" />
+            android:text="@string/order_cost_label" />
 
         <TextView
             android:id="@+id/costText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:labelFor="@+id/costLabel"
             android:text="TextView" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/totalLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -120,23 +120,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:labelFor="@id/totalText"
-            android:text="TextView" />
+            android:text="@string/order_total_label" />
 
         <TextView
             android:id="@+id/totalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:labelFor="@+id/totalLabel"
             android:text="TextView" />
     </LinearLayout>
 
     <Button
-    android:id="@+id/placeOrderButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="@string/order_submit_button" />
+        android:id="@+id/placeOrderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_submit_button" />
 
 
 </LinearLayout>
