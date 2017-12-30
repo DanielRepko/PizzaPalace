@@ -36,8 +36,10 @@ public class OrderFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    Double cost = 0.0;
-    Double total = cost * 1.13;
+    TextView costText;
+    TextView totalText;
+
+    View view;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -80,9 +82,8 @@ public class OrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_order, container, false);
+        view = inflater.inflate(R.layout.fragment_order, container, false);
 
-        //variables for cost and total
 
 
         //gridview for checkboxes
@@ -167,7 +168,7 @@ public class OrderFragment extends Fragment {
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                cost = calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView);
+                calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, view);
             }
 
             @Override
@@ -234,12 +235,12 @@ public class OrderFragment extends Fragment {
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    cost = calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView);
+                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, view);
                 }
             });
         }
 
-        
+
 
         return view;
     }
@@ -251,8 +252,12 @@ public class OrderFragment extends Fragment {
      * @param size The string value of the selected size
      * @param toppings The GridView containing the toppings checkboxes
      */
-    public Double calculateCost(String size, GridView toppings){
+    public void calculateCost(String size, GridView toppings, View view){
         Double cost = 0.0;
+        Double total = cost * 1.13;
+
+        costText = view.findViewById(R.id.costText);
+        totalText = view.findViewById(R.id.totalText);
 
         //check the size and setting the value of cost accordingly
         switch(size){
@@ -277,7 +282,8 @@ public class OrderFragment extends Fragment {
             }
         }
 
-        return cost;
+        costText.setText("$"+cost);
+        totalText.setText("$"+total);
     }
 
     /**
