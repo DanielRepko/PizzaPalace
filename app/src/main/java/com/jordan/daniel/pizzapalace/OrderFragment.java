@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -160,8 +161,8 @@ public class OrderFragment extends Fragment {
 
 
         /**
-         * the purpose of this onItemSelectedListener is to check what size is selected
-         * and then pass that on to the costText to calculate the cost of the pizza
+         * the purpose of this onItemSelectedListener is to call the calculateCost() method
+         * whenever a size is selected
          */
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -221,6 +222,24 @@ public class OrderFragment extends Fragment {
             }
         });
 
+        /**
+         * The purpose of this for loop is to iterate through all of CheckBoxes
+         * inside toppingsGridView and give them an onCheckedChangeListener
+         *
+         */
+
+        for(int i = 0; i < toppingsGridView.getChildCount(); i++){
+            CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    cost = calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView);
+                }
+            });
+        }
+
+        
 
         return view;
     }
