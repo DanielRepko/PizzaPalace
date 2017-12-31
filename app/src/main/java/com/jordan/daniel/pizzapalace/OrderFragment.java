@@ -255,8 +255,10 @@ public class OrderFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
-                fm = getChildFragmentManager();
+                Toast toast = Toast.makeText(getContext(), "Your order has been sent", Toast.LENGTH_SHORT);
+                toast.show();
+
+                fm = getFragmentManager();
                 FragmentTransaction trans = fm.beginTransaction();
                 trans.replace(R.id.content, new MainFragment());
                 trans.addToBackStack(null);
