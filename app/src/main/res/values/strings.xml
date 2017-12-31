@@ -9,7 +9,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
+    <!-- strings for the main page--> 
     <string name="about_us_title">About Us</string>
     <string name="about_us_text">Pizza Palace started out as a small family run business, but now is a small franchise with
         several locations around Windsor Ontario. We here at Pizza Palace value fun, wholesome family
@@ -37,4 +37,33 @@
     <string name="contact_call">Call</string>
     <string name="contact_email">Email</string>
     <string name="contact_social_media">Social Media</string>
+
+    <!-- strings for the order page -->
+    <string name="order_title_text">Place Order</string>
+
+    <string name="order_size_label">Size:</string>
+
+    <string name="order_type_label">Type:</string>
+    <string name="order_toppings_header">Toppings:</string>
+    <string name="order_toppings_label_pepperoni">Pepperoni</string>
+    <string name="order_toppings_label_bacon">Bacon</string>
+    <string name="order_toppings_label_ham">Ham</string>
+    <string name="order_toppings_label_pineapple">Pineapple</string>
+    <string name="order_toppings_label_hamburger">Hamburger</string>
+    <string name="order_toppings_label_mushrooms">Mushrooms</string>
+    <string name="order_toppings_label_anchovies">Anchovies</string>
+    <string name="order_toppings_label_green_olives">Green Olives</string>
+    <string name="order_toppings_label_black_olives">Black Olives</string>
+    <string name="order_toppings_label_peppers">Peppers</string>
+    <string name="order_toppings_label_onions">Onions</string>
+    <string name="order_toppings_label_sausage">Sausage</string>
+    <string name="order_toppings_label_spinach">Spinach</string>
+    <string name="order_toppings_label_extra_cheese">Extra Cheese</string>
+
+    <string name="order_payment_method_label">Payment Method:</string>
+    <string name="order_payment_method_cash">Cash</string>
+    <string name="order_payment_method_card">Card</string>
+
+    <string name="order_submit_button">Submit</string>
+
 </resources>
