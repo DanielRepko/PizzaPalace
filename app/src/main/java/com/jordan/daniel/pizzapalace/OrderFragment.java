@@ -4,16 +4,20 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
 
@@ -41,6 +45,8 @@ public class OrderFragment extends Fragment {
 
     Spinner sizeSpinner;
     GridView toppingsGridView;
+
+    FragmentManager fm;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -162,6 +168,8 @@ public class OrderFragment extends Fragment {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter3);
 
+        Button submit = (Button) view.findViewById(R.id.submitButton);
+
 
         /**
          * the purpose of this onItemSelectedListener is to call the calculateCost() method
@@ -242,6 +250,21 @@ public class OrderFragment extends Fragment {
             });
 
         }
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                fm = getChildFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.replace(R.id.content, new MainFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
+
 
 
 

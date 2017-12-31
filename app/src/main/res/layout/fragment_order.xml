@@ -132,7 +132,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/placeOrderButton"
+        android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/order_submit_button" />
