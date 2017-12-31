@@ -39,7 +39,8 @@ public class OrderFragment extends Fragment {
     TextView costText;
     TextView totalText;
 
-    View view;
+    Spinner sizeSpinner;
+    GridView toppingsGridView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -82,12 +83,13 @@ public class OrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_order, container, false);
+        View view = inflater.inflate(R.layout.fragment_order, container, false);
 
-
+        costText = view.findViewById(R.id.costText);
+        totalText = view.findViewById(R.id.totalText);
 
         //gridview for checkboxes
-        final GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
+        toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
         //ArrayList for checkbox labels with references to string values inside strings.xml
         ArrayList<Integer> labels = new ArrayList<>();
@@ -113,7 +115,7 @@ public class OrderFragment extends Fragment {
 
 
         //spinner for size options
-        final Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
+        sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
 
         //ArrayList for sizeSpinner with references to string values inside strings.xml\
         ArrayList<String> sizes = new ArrayList<>();
@@ -168,7 +170,7 @@ public class OrderFragment extends Fragment {
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, view);
+                calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
             }
 
             @Override
@@ -213,7 +215,7 @@ public class OrderFragment extends Fragment {
                             }
                         }
                     }
-
+                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
                 }
             }
 
@@ -235,15 +237,17 @@ public class OrderFragment extends Fragment {
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, view);
+                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
                 }
             });
+
         }
 
 
 
         return view;
     }
+
 
     /**
      * This method checks the selected pizza size, as well as the selected toppings,
@@ -252,12 +256,12 @@ public class OrderFragment extends Fragment {
      * @param size The string value of the selected size
      * @param toppings The GridView containing the toppings checkboxes
      */
-    public void calculateCost(String size, GridView toppings, View view){
-        Double cost = 0.0;
-        Double total = cost * 1.13;
+    public void calculateCost(String size, GridView toppings, TextView costText, TextView totalText){
 
-        costText = view.findViewById(R.id.costText);
-        totalText = view.findViewById(R.id.totalText);
+        Double cost = 0.0;
+        Double total = 0.0;
+
+
 
         //check the size and setting the value of cost accordingly
         switch(size){
@@ -277,10 +281,11 @@ public class OrderFragment extends Fragment {
         //iterate through all the CheckBoxes in the GridView
         for(int i = 0; i < toppings.getChildCount(); i++){
             CheckBox checkBox = (CheckBox) toppings.getChildAt(i);
-            if(checkBox.isChecked() == true){
+            if(checkBox.isChecked()){
                 cost += 1.99;
             }
         }
+        total = cost * 1.13;
 
         costText.setText("$"+cost);
         totalText.setText("$"+total);
