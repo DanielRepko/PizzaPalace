@@ -26,4 +26,9 @@
     <string name="menu_timer">Delivery Timer</string>
     <string name="menu_location">Locate Nearest Store</string>
 
+    <!--Tip Fragment Strings-->
+    <string name="tip_price">Price:</string>
+    <string name="tip_percent">Tip Percent:</string>
+    <string name="tip_total">Total Tip:</string>
+    <string name="calculate">Calculate</string>
 </resources>
