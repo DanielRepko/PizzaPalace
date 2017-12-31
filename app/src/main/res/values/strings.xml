@@ -31,4 +31,10 @@
     <string name="tip_percent">Tip Percent:</string>
     <string name="tip_total">Total Tip:</string>
     <string name="calculate">Calculate</string>
+
+    <!--Contact Fragment Strings-->
+    <string name="contact_message">Have an issue with your order? Contact us and we\'ll sort it out!</string>
+    <string name="contact_call">Call</string>
+    <string name="contact_email">Email</string>
+    <string name="contact_social_media">Social Media</string>
 </resources>

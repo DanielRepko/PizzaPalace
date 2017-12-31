@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Have an issue with your order? Contact us and we'll sort it out!"
+        android:text="@string/contact_message"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -20,17 +20,17 @@
         android:id="@+id/phoneButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Call" />
+        android:text="@string/contact_call" />
 
     <Button
         android:id="@+id/emailButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:text="@string/contact_email" />
 
     <Button
         android:id="@+id/facebookButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Social Media" />
+        android:text="@string/contact_social_media" />
 </LinearLayout>
