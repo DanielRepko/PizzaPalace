@@ -3,6 +3,7 @@
 
     <EditTextPreference
         android:defaultValue="5"
+        android:inputType="number"
         android:key="default_tip_percent"
         android:selectAllOnFocus="true"
         android:singleLine="true"
