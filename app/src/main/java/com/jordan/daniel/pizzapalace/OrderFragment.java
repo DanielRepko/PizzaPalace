@@ -2,8 +2,10 @@
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -86,11 +88,14 @@ public class OrderFragment extends Fragment {
         }
     }
 
+    SharedPreferences sharedPref;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         costText = view.findViewById(R.id.costText);
         totalText = view.findViewById(R.id.totalText);
@@ -263,7 +268,7 @@ public class OrderFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getContext(), "Your order has been sent", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), "Your order has been confirmed, and will be delivered to "+sharedPref.getString("default_address", "Pizza Palace"), Toast.LENGTH_SHORT);
                 toast.show();
 
                 fm = getFragmentManager();

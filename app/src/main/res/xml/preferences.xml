@@ -10,7 +10,6 @@
         android:summary="@string/preferences_tip_summary"
         android:title="@string/preferences_tip_title" />
     <EditTextPreference
-        android:inputType="number"
         android:key="default_address"
         android:selectAllOnFocus="true"
         android:singleLine="true"
