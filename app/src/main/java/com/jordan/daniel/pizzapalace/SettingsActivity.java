@@ -7,7 +7,8 @@ import android.preference.PreferenceFragment;
 public class SettingsActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(R.id.content, new PrefFragment());
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefFragment()).commit();
+
     }
 
     public static class PrefFragment extends PreferenceFragment {
