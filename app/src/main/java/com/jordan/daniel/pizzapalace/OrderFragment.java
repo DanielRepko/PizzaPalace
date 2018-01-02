@@ -1,18 +1,24 @@
+
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
 
@@ -34,6 +40,14 @@ public class OrderFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    TextView costText;
+    TextView totalText;
+
+    Spinner sizeSpinner;
+    GridView toppingsGridView;
+
+    FragmentManager fm;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -77,8 +91,12 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+
+        costText = view.findViewById(R.id.costText);
+        totalText = view.findViewById(R.id.totalText);
+
         //gridview for checkboxes
-        final GridView toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
+        toppingsGridView = (GridView) view.findViewById(R.id.toppingsGridView);
 
         //ArrayList for checkbox labels with references to string values inside strings.xml
         ArrayList<Integer> labels = new ArrayList<>();
@@ -104,7 +122,7 @@ public class OrderFragment extends Fragment {
 
 
         //spinner for size options
-        Spinner sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
+        sizeSpinner = (Spinner) view.findViewById(R.id.sizeSpinner);
 
         //ArrayList for sizeSpinner with references to string values inside strings.xml\
         ArrayList<String> sizes = new ArrayList<>();
@@ -151,6 +169,25 @@ public class OrderFragment extends Fragment {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter3);
 
+        Button submit = (Button) view.findViewById(R.id.submitButton);
+
+
+        /**
+         * the purpose of this onItemSelectedListener is to call the calculateCost() method
+         * whenever a size is selected
+         */
+        sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         /**
          * The purpose of this onItemSelectedListener is to check off the CheckBoxes of the
          * appropriate toppings according to what type is selected in the type spinner
@@ -187,7 +224,7 @@ public class OrderFragment extends Fragment {
                             }
                         }
                     }
-
+                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
                 }
             }
 
@@ -197,8 +234,87 @@ public class OrderFragment extends Fragment {
             }
         });
 
+        /**
+         * The purpose of this for loop is to iterate through all of CheckBoxes
+         * inside toppingsGridView and give them an onCheckedChangeListener
+         *
+         */
+
+        for(int i = 0; i < toppingsGridView.getChildCount(); i++){
+            CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
+                }
+            });
+
+        }
+
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getContext(), "Your order has been sent", Toast.LENGTH_SHORT);
+                toast.show();
+
+                fm = getFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.replace(R.id.content, new MainFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
+
+
+
 
         return view;
+    }
+
+
+    /**
+     * This method checks the selected pizza size, as well as the selected toppings,
+     * calculates the combined cost of the items, and returns the result
+     *
+     * @param size The string value of the selected size
+     * @param toppings The GridView containing the toppings checkboxes
+     */
+    public void calculateCost(String size, GridView toppings, TextView costText, TextView totalText){
+
+        Double cost = 0.0;
+        Double total = 0.0;
+
+
+
+        //check the size and setting the value of cost accordingly
+        switch(size){
+            case "Small":
+                cost = 9.99;
+                break;
+            case "Medium":
+                cost = 12.99;
+                break;
+            case "Large":
+                cost = 14.99;
+                break;
+            default:
+                break;
+        }
+
+        //iterate through all the CheckBoxes in the GridView
+        for(int i = 0; i < toppings.getChildCount(); i++){
+            CheckBox checkBox = (CheckBox) toppings.getChildAt(i);
+            if(checkBox.isChecked()){
+                cost += 1.99;
+            }
+        }
+        total = cost * 1.13;
+
+        costText.setText("$"+cost);
+        totalText.setText("$"+total);
     }
 
     /**
@@ -293,3 +409,4 @@ public class OrderFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 }
+
