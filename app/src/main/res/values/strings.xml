@@ -70,4 +70,8 @@
     <string name="preferences_tip_title">Default Tip Percent</string>
     <string name="preferences_tip_summary">Always give a 5 or 15% tip? This value will be used as the
         default value in the tip calculator so you don\'t have to type it out every time! Default is 5</string>
+
+    <string name="preferences_address_title">Default Shipping Address</string>
+    <string name="preferences_address_summary">Where do you live? This is the default address we will
+        send your pizza to, so make sure it's up to date!</string>
 </resources>
