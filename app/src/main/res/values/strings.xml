@@ -73,5 +73,5 @@
 
     <string name="preferences_address_title">Default Shipping Address</string>
     <string name="preferences_address_summary">Where do you live? This is the default address we will
-        send your pizza to, so make sure it's up to date!</string>
+        send your pizza to, so make sure it\'s up to date!</string>
 </resources>
