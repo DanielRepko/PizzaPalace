@@ -82,12 +82,8 @@ public class TipFragment extends Fragment {
 
         tipTotal.setEnabled(false);
 
-        if(savedInstanceState != null) {
-
-        } else {
-            String defaultPercent = sharedPref.getString("default_tip_percent", "5");
-            editPercent.setText(defaultPercent+"");
-        }
+        String defaultPercent = sharedPref.getString("default_tip_percent", "5");
+        editPercent.setText(defaultPercent+"");
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
