@@ -65,6 +65,9 @@
     <string name="order_payment_method_cash">Cash</string>
     <string name="order_payment_method_card">Card</string>
 
+    <string name="order_cost_label">Cost:</string>
+    <string name="order_total_label">Total(with tax):</string>
+
     <string name="order_submit_button">Submit</string>
 
     <!--Preferences Strings-->
@@ -74,5 +77,5 @@
 
     <string name="preferences_address_title">Default Shipping Address</string>
     <string name="preferences_address_summary">Where do you live? This is the default address we will
-        send your pizza to, so make sure it's up to date!</string>
+        send your pizza to, so make sure it\'s up to date!</string>
 </resources>

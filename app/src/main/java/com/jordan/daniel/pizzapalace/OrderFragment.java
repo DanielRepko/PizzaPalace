@@ -180,6 +180,24 @@ public class OrderFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
+
+                /**
+                 * The purpose of this for loop is to iterate through all of CheckBoxes
+                 * inside toppingsGridView and give them an onCheckedChangeListener
+                 *
+                 * This loop needs to be called inside this onItemSelectedListener
+                 * so that it is able to run AFTER the page loads, so that toppingsGridView
+                 * will have already been filled with checkboxes
+                 */
+                for(int i = 0; i < toppingsGridView.getChildCount(); i++) {
+                    CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+                    checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                            calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
+                        }
+                    });
+                }
             }
 
             @Override
@@ -234,23 +252,12 @@ public class OrderFragment extends Fragment {
             }
         });
 
-        /**
-         * The purpose of this for loop is to iterate through all of CheckBoxes
-         * inside toppingsGridView and give them an onCheckedChangeListener
-         *
-         */
 
-        for(int i = 0; i < toppingsGridView.getChildCount(); i++){
-            CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
 
-            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
-                }
-            });
+        //CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(1);
+        //checkBox.setText("This is a test");
 
-        }
+
 
 
         submit.setOnClickListener(new View.OnClickListener() {
