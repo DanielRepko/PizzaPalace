@@ -1,8 +1,10 @@
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,17 +65,25 @@ public class TipFragment extends Fragment {
         }
     }
 
+    SharedPreferences sharedPref;
+    EditText editCost;
+    EditText editPercent;
+    EditText tipTotal;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tip, container, false);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        final EditText editCost = (EditText) view.findViewById(R.id.editCost);
-        final EditText editPercent = (EditText) view.findViewById(R.id.editPercent);
-        final EditText tipTotal = (EditText) view.findViewById(R.id.tipTotal);
+        editCost = (EditText) view.findViewById(R.id.editCost);
+        editPercent = (EditText) view.findViewById(R.id.editPercent);
+        tipTotal = (EditText) view.findViewById(R.id.tipTotal);
         Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
 
         tipTotal.setEnabled(false);
+
+        String defaultPercent = sharedPref.getString("default_tip_percent", "5");
+        editPercent.setText(defaultPercent+"");
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

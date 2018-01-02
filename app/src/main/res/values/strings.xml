@@ -9,7 +9,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- strings for the main page--> 
+    <!-- strings for the main page-->
     <string name="about_us_title">About Us</string>
     <string name="about_us_text">Pizza Palace started out as a small family run business, but now is a small franchise with
         several locations around Windsor Ontario. We here at Pizza Palace value fun, wholesome family
@@ -66,4 +66,12 @@
 
     <string name="order_submit_button">Submit</string>
 
+    <!--Preferences Strings-->
+    <string name="preferences_tip_title">Default Tip Percent</string>
+    <string name="preferences_tip_summary">Always give a 5 or 15% tip? This value will be used as the
+        default value in the tip calculator so you don\'t have to type it out every time! Default is 5</string>
+
+    <string name="preferences_address_title">Default Shipping Address</string>
+    <string name="preferences_address_summary">Where do you live? This is the default address we will
+        send your pizza to, so make sure it's up to date!</string>
 </resources>
