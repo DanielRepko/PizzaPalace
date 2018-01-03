@@ -7,6 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
+
+import java.util.ArrayList;
 
 
 /**
@@ -28,6 +33,8 @@ public class PizzaListFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    ListView list;
 
     public PizzaListFragment() {
         // Required empty public constructor
@@ -65,7 +72,10 @@ public class PizzaListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pizza_list, container, false);
 
+        list = (ListView) view.findViewById(R.id.pizzaList);
 
+        ArrayList<Pizza> pizzaArrayList = new ArrayList<Pizza>();
+        pizzaArrayList.add(new Pizza());
 
         return view;
     }
