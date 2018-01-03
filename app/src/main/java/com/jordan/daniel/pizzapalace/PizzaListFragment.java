@@ -84,7 +84,10 @@ public class PizzaListFragment extends Fragment {
         meatLoversPizza.add("Sausage");
         pizzaArrayList.add(new Pizza("Meat Lover's", meatLoversPizza));
 
-        
+        ArrayList<String> hawaiianPizza = new ArrayList<>();
+        hawaiianPizza.add("Pineapple");
+        hawaiianPizza.add("Ham");
+        pizzaArrayList.add(new Pizza("Hawaiian", hawaiianPizza));
 
         return view;
     }
