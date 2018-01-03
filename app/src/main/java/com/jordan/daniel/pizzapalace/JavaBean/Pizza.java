@@ -33,4 +33,8 @@ public class Pizza {
     public void setToppings(ArrayList<String> toppings) {
         this.toppings = toppings;
     }
+
+    public String toString() {
+        return this.name;
+    }
 }
