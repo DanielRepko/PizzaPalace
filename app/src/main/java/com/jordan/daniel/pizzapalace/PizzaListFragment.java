@@ -75,7 +75,16 @@ public class PizzaListFragment extends Fragment {
         list = (ListView) view.findViewById(R.id.pizzaList);
 
         ArrayList<Pizza> pizzaArrayList = new ArrayList<Pizza>();
-        pizzaArrayList.add(new Pizza());
+
+        ArrayList<String> meatLoversPizza = new ArrayList<String>();
+        meatLoversPizza.add("Pepperoni");
+        meatLoversPizza.add("Bacon");
+        meatLoversPizza.add("Ham");
+        meatLoversPizza.add("Hamburger");
+        meatLoversPizza.add("Sausage");
+        pizzaArrayList.add(new Pizza("Meat Lover's", meatLoversPizza));
+
+        
 
         return view;
     }
