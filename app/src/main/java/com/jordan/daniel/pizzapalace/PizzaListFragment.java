@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
@@ -105,6 +106,9 @@ public class PizzaListFragment extends Fragment {
         motherlodePizza.add("Spinach");
         motherlodePizza.add("Extra Cheese");
         pizzaArrayList.add(new Pizza("The Motherlode", motherlodePizza));
+
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, pizzaArrayList);
+        list.setAdapter(adapter);
 
         return view;
     }
