@@ -108,7 +108,9 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
         } else if (id == R.id.nav_sale) {
-
+            trans.replace(R.id.content, new PizzaListFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         } else if (id == R.id.nav_order) {
             trans.replace(R.id.content, new OrderFragment());
             trans.addToBackStack(null);
