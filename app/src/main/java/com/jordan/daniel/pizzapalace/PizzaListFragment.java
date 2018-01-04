@@ -118,6 +118,26 @@ public class PizzaListFragment extends Fragment {
         public CustomAdapter(Context context, ArrayList<Pizza> items) {
             super(context, 0, items);
         }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if(convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_view, parent, false);
+            }
+
+            TextView name = (TextView) convertView.findViewById(R.id.name);
+            TextView toppings = (TextView) convertView.findViewById(R.id.toppings);
+
+            Pizza pizza = getItem(position);
+            name.setText(pizza.getName());
+            String toppingString = "";
+
+            for(int i = 0; i < pizza.getToppings().size(); i++) {
+                toppingString += pizza.getToppings().get(i) + ", ";
+            }
+            toppings.setText(toppingString);
+
+            return convertView;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
