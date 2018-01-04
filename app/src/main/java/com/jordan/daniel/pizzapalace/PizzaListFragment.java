@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
 
@@ -107,10 +108,16 @@ public class PizzaListFragment extends Fragment {
         motherlodePizza.add("Extra Cheese");
         pizzaArrayList.add(new Pizza("The Motherlode", motherlodePizza));
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, pizzaArrayList);
+        CustomAdapter adapter = new CustomAdapter(getContext(), pizzaArrayList);
         list.setAdapter(adapter);
 
         return view;
+    }
+
+    public class CustomAdapter extends ArrayAdapter<Pizza> {
+        public CustomAdapter(Context context, ArrayList<Pizza> items) {
+            super(context, 0, items);
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
