@@ -18,6 +18,6 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="@dimen/order_label_text_size"
+        android:textSize="@dimen/topping_text_size"
         android:textStyle="italic" />
 </LinearLayout>
