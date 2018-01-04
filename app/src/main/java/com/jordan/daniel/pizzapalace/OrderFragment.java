@@ -165,6 +165,7 @@ public class OrderFragment extends Fragment {
 
         final Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 
+        //filling the typeSpinner
         ArrayList<String> types = new ArrayList<>();
         types.add("-- Custom --");
         for(int i = 0; i < pizzas.size(); i++){
@@ -194,8 +195,9 @@ public class OrderFragment extends Fragment {
                  * so that it is able to run AFTER the page loads, so that toppingsGridView
                  * will have already been filled with checkboxes
                  */
+
                 for(int i = 0; i < toppingsGridView.getChildCount(); i++) {
-                    CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+                    final CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
                     checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -222,39 +224,39 @@ public class OrderFragment extends Fragment {
         typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(typeSpinner.getSelectedItem().toString() == "-- Custom --"){
-                    //Custom means that no toppings need to be automatically selected, do nothing
-                } else {
-                    Pizza pizza = new Pizza();
-                    //iterate through pizzas to find the pizza that is selected
-                    for(int i = 0; i < pizzas.size(); i++){
-                        if(pizzas.get(i).getName() == typeSpinner.getSelectedItem().toString()){
-                            pizza = pizzas.get(i);
+                    if (typeSpinner.getSelectedItem().toString() == "-- Custom --") {
+                        //Custom means that no toppings need to be automatically selected, do nothing
+                    } else {
+                        Pizza pizza = new Pizza();
+                        //iterate through pizzas to find the pizza that is selected
+                        for (int i = 0; i < pizzas.size(); i++) {
+                            if (pizzas.get(i).getName() == typeSpinner.getSelectedItem().toString()) {
+                                pizza = pizzas.get(i);
+                            }
                         }
-                    }
-                    //iterate through all of the CheckBoxes inside toppingsGridView
-                    for(int i = 0; i < toppingsGridView.getChildCount(); i++){
-                        //CheckBox checkBox = view.find(toppingsGridView.getChildAt(1).getId());
+                        //iterate through all of the CheckBoxes inside toppingsGridView
+                        for (int i = 0; i < toppingsGridView.getChildCount(); i++) {
+                            //CheckBox checkBox = view.find(toppingsGridView.getChildAt(1).getId());
 
-                        CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
-                        //iterate through the toppings ArrayList inside of pizza
-                        for(int j = 0; j < pizza.getToppings().size(); j++){
-                            if(checkBox.getText().toString().equals(pizza.getToppings().get(j))){
-                                checkBox.setChecked(true);
-                                break;
-                            } else {
-                                checkBox.setChecked(false);
+                            CheckBox checkBox = (CheckBox) toppingsGridView.getChildAt(i);
+                            //iterate through the toppings ArrayList inside of pizza
+                            for (int j = 0; j < pizza.getToppings().size(); j++) {
+                                if (checkBox.getText().toString().equals(pizza.getToppings().get(j))) {
+                                    checkBox.setChecked(true);
+                                    break;
+                                } else {
+                                    checkBox.setChecked(false);
+                                }
                             }
                         }
                     }
-                    calculateCost(sizeSpinner.getSelectedItem().toString(), toppingsGridView, costText, totalText);
                 }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
+                @Override
+                public void onNothingSelected (AdapterView < ? > parent){
+
+                }
         });
 
 
