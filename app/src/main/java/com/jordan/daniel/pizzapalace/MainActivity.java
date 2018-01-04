@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity
                     MainFragment.OnFragmentInteractionListener,
                     ContactFragment.OnFragmentInteractionListener,
                     OrderFragment.OnFragmentInteractionListener,
-                    TipFragment.OnFragmentInteractionListener {
+                    TipFragment.OnFragmentInteractionListener,
+                    PizzaListFragment.OnFragmentInteractionListener {
 
 
     FragmentManager fm;
