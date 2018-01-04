@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +40,7 @@ public class PizzaListFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     ListView list;
+    FragmentManager fm;
     public static ArrayList<Pizza> pizzaArrayList;
 
     public PizzaListFragment() {
@@ -129,6 +133,16 @@ public class PizzaListFragment extends Fragment {
 
         CustomAdapter adapter = new CustomAdapter(getContext(), pizzaArrayList);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                fm = getFragmentManager();
+                FragmentTransaction trans = fm.beginTransaction();
+                trans.replace(R.id.content, new OrderFragment());
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
 
         return view;
     }
