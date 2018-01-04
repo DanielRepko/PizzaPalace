@@ -5,19 +5,31 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_sale"
             android:icon="@drawable/ic_monetization_on_black_24dp"
-            android:title="Current Specials" />
+            android:title="@string/menu_sale" />
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/ic_local_pizza_black_24dp"
-            android:title="Order" />
+            android:title="@string/menu_order" />
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/ic_mail_black_24dp"
-            android:title="Contact" />
+            android:title="@string/menu_contact" />
+        <item
+            android:id="@+id/nav_tips"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="@string/menu_tips" />
+        <item
+            android:id="@+id/nav_timer"
+            android:icon="@drawable/ic_timer_black_24dp"
+            android:title="@string/menu_timer" />
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@drawable/ic_map_black_24dp"
+            android:title="@string/menu_location" />
     </group>
 
 </menu>

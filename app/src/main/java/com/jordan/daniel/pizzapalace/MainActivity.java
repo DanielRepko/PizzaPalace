@@ -1,7 +1,9 @@
 package com.jordan.daniel.pizzapalace;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -18,8 +20,12 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-                   DealFragment.OnFragmentInteractionListener,
-                   MainFragment.OnFragmentInteractionListener{
+                    DealFragment.OnFragmentInteractionListener,
+                    MainFragment.OnFragmentInteractionListener,
+                    ContactFragment.OnFragmentInteractionListener,
+                    OrderFragment.OnFragmentInteractionListener,
+                    TipFragment.OnFragmentInteractionListener {
+
 
     FragmentManager fm;
 
@@ -82,7 +88,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(settingsIntent);
+//            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -102,9 +110,31 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sale) {
 
         } else if (id == R.id.nav_order) {
-
+            trans.replace(R.id.content, new OrderFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         } else if (id == R.id.nav_contact) {
-
+            trans.replace(R.id.content, new ContactFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_tips) {
+            trans.replace(R.id.content, new TipFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+        } else if (id == R.id.nav_timer) {
+            Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
+                    .putExtra(AlarmClock.EXTRA_MESSAGE, "Delivery Timer")
+                    .putExtra(AlarmClock.EXTRA_LENGTH, 1800);
+            if(intent.resolveActivity(getPackageManager()) != null){
+                startActivity(intent);
+            }
+        } else if (id == R.id.nav_location) {
+            Uri location = Uri.parse("geo:0,0?q=42.2463450,-83.0191849(Pizza Palace)");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(location);
+            if(intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
