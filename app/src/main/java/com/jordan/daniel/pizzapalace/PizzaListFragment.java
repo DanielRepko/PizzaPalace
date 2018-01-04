@@ -37,6 +37,7 @@ public class PizzaListFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     ListView list;
+    public static ArrayList<Pizza> pizzaArrayList;
 
     public PizzaListFragment() {
         // Required empty public constructor
@@ -76,7 +77,7 @@ public class PizzaListFragment extends Fragment {
 
         list = (ListView) view.findViewById(R.id.pizzaList);
 
-        ArrayList<Pizza> pizzaArrayList = new ArrayList<Pizza>();
+        pizzaArrayList = new ArrayList<Pizza>();
 
         ArrayList<String> meatLoversPizza = new ArrayList<String>();
         meatLoversPizza.add("Pepperoni");
@@ -123,7 +124,7 @@ public class PizzaListFragment extends Fragment {
         cheeseburgerPizza.add("Hamburger");
         cheeseburgerPizza.add("Mushrooms");
         cheeseburgerPizza.add("Onions");
-        cheeseburgerPizza.add("Extra Cheese");
+        cheeseburgerPizza .add("Extra Cheese");
         pizzaArrayList.add(new Pizza("Cheeseburger", cheeseburgerPizza));
 
         CustomAdapter adapter = new CustomAdapter(getContext(), pizzaArrayList);
