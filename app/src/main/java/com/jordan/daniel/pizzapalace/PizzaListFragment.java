@@ -108,6 +108,24 @@ public class PizzaListFragment extends Fragment {
         motherlodePizza.add("Extra Cheese");
         pizzaArrayList.add(new Pizza("The Motherlode", motherlodePizza));
 
+        ArrayList<String> vegetarianPizza = new ArrayList<String>();
+        vegetarianPizza.add("Pineapple");
+        vegetarianPizza.add("Mushrooms");
+        vegetarianPizza.add("Green Olives");
+        vegetarianPizza.add("Black Olives");
+        vegetarianPizza.add("Peppers");
+        vegetarianPizza.add("Onions");
+        vegetarianPizza.add("Spinach");
+        pizzaArrayList.add(new Pizza("Vegetarian", vegetarianPizza));
+
+        ArrayList<String> cheeseburgerPizza = new ArrayList<String>();
+        cheeseburgerPizza.add("Bacon");
+        cheeseburgerPizza.add("Hamburger");
+        cheeseburgerPizza.add("Mushrooms");
+        cheeseburgerPizza.add("Onions");
+        cheeseburgerPizza.add("Extra Cheese");
+        pizzaArrayList.add(new Pizza("Cheeseburger", cheeseburgerPizza));
+
         CustomAdapter adapter = new CustomAdapter(getContext(), pizzaArrayList);
         list.setAdapter(adapter);
 
