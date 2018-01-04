@@ -8,4 +8,73 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- strings for the main page-->
+    <string name="about_us_title">About Us</string>
+    <string name="about_us_text">Pizza Palace started out as a small family run business, but now is a small franchise with
+        several locations around Windsor Ontario. We here at Pizza Palace value fun, wholesome family
+        ideals, and delicious homemade-style pizza, and good times for all, all at a great price.
+        If you want to have a party, go out with your family, have a nice date, or even just enjoy a
+        quick slice, then Pizza Palace is the pizza place for you.</string>
+
+    <!--Menu Strings-->
+    <string name="menu_home">Home</string>
+    <string name="menu_sale">Current Specials</string>
+    <string name="menu_order">Order</string>
+    <string name="menu_contact">Contact</string>
+    <string name="menu_tips">Tips</string>
+    <string name="menu_timer">Delivery Timer</string>
+    <string name="menu_location">Locate Nearest Store</string>
+
+    <!--Tip Fragment Strings-->
+    <string name="tip_price">Price:</string>
+    <string name="tip_percent">Tip Percent:</string>
+    <string name="tip_total">Total Tip:</string>
+    <string name="calculate">Calculate</string>
+
+    <!--Contact Fragment Strings-->
+    <string name="contact_message">Have an issue with your order? Contact us and we\'ll sort it out!</string>
+    <string name="contact_call">Call</string>
+    <string name="contact_email">Email</string>
+    <string name="contact_social_media">Social Media</string>
+
+    <!-- strings for the order page -->
+    <string name="order_title_text">Place Order</string>
+
+    <string name="order_size_label">Size:</string>
+
+    <string name="order_type_label">Type:</string>
+    <string name="order_toppings_header">Toppings:</string>
+    <string name="order_toppings_label_pepperoni">Pepperoni</string>
+    <string name="order_toppings_label_bacon">Bacon</string>
+    <string name="order_toppings_label_ham">Ham</string>
+    <string name="order_toppings_label_pineapple">Pineapple</string>
+    <string name="order_toppings_label_hamburger">Hamburger</string>
+    <string name="order_toppings_label_mushrooms">Mushrooms</string>
+    <string name="order_toppings_label_anchovies">Anchovies</string>
+    <string name="order_toppings_label_green_olives">Green Olives</string>
+    <string name="order_toppings_label_black_olives">Black Olives</string>
+    <string name="order_toppings_label_peppers">Peppers</string>
+    <string name="order_toppings_label_onions">Onions</string>
+    <string name="order_toppings_label_sausage">Sausage</string>
+    <string name="order_toppings_label_spinach">Spinach</string>
+    <string name="order_toppings_label_extra_cheese">Extra Cheese</string>
+
+    <string name="order_payment_method_label">Payment Method:</string>
+    <string name="order_payment_method_cash">Cash</string>
+    <string name="order_payment_method_card">Card</string>
+
+    <string name="order_cost_label">Cost:</string>
+    <string name="order_total_label">Total(with tax):</string>
+
+    <string name="order_submit_button">Submit</string>
+
+    <!--Preferences Strings-->
+    <string name="preferences_tip_title">Default Tip Percent</string>
+    <string name="preferences_tip_summary">Always give a 5 or 15% tip? This value will be used as the
+        default value in the tip calculator so you don\'t have to type it out every time! Default is 5</string>
+
+    <string name="preferences_address_title">Default Shipping Address</string>
+    <string name="preferences_address_summary">Where do you live? This is the default address we will
+        send your pizza to, so make sure it\'s up to date!</string>
 </resources>
