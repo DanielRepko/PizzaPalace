@@ -7,4 +7,10 @@ import java.util.ArrayList;
  */
 
 public class PizzaList extends ArrayList {
+
+    private ArrayList<String> toppings;
+
+    public PizzaList(){
+
+    }
 }
