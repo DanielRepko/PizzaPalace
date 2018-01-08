@@ -147,25 +147,7 @@ public class OrderFragment extends Fragment {
         /**
          * ArrayList to store all of the pizza types inside of the
          * ListView on the Pizza List page
-         *
-         * NOTE: final product will loop through the ListView on the
-         * Pizza List page, but for now will be manually filled inside of
-         * OrderFragment purely for testing purposes
-         *
-        final ArrayList<Pizza> pizzas = new ArrayList<>();
-        ArrayList<String> toppings1 = new ArrayList<>();
-
-        toppings1.add("Pepperoni");
-        toppings1.add("Bacon");
-        toppings1.add("Ham");
-        toppings1.add("Hamburger");
-        toppings1.add("Sausage");
-        pizzas.add(new Pizza("Meat Lover's", toppings1));
-
-        ArrayList<String> toppings2 = new ArrayList<>();
-        toppings2.add("Pineapple");
-        toppings2.add("Ham");
-        pizzas.add(new Pizza("Hawaiian", toppings2));*/
+         */
         pizzas = new PizzaList();
 
         typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);

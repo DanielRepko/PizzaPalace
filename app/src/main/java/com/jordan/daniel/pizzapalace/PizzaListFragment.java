@@ -43,6 +43,8 @@ public class PizzaListFragment extends Fragment {
     ListView list;
     FragmentManager fm;
 
+    public static int itemChosen;
+
     public PizzaListFragment() {
         // Required empty public constructor
     }
@@ -89,6 +91,7 @@ public class PizzaListFragment extends Fragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 fm = getFragmentManager();
+                PizzaListFragment.itemChosen = i + 1;
                 FragmentTransaction trans = fm.beginTransaction();
                 trans.replace(R.id.content, new OrderFragment());
                 trans.addToBackStack(null);
