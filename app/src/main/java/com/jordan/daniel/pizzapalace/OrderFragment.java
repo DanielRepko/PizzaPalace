@@ -49,6 +49,9 @@ public class OrderFragment extends Fragment {
     Spinner sizeSpinner;
     GridView toppingsGridView;
 
+    ArrayList<Pizza> pizzas;
+    Spinner typeSpinner;
+
     FragmentManager fm;
 
     // TODO: Rename and change types of parameters
@@ -147,7 +150,7 @@ public class OrderFragment extends Fragment {
          * NOTE: final product will loop through the ListView on the
          * Pizza List page, but for now will be manually filled inside of
          * OrderFragment purely for testing purposes
-         */
+         *
         final ArrayList<Pizza> pizzas = new ArrayList<>();
         ArrayList<String> toppings1 = new ArrayList<>();
 
@@ -161,9 +164,10 @@ public class OrderFragment extends Fragment {
         ArrayList<String> toppings2 = new ArrayList<>();
         toppings2.add("Pineapple");
         toppings2.add("Ham");
-        pizzas.add(new Pizza("Hawaiian", toppings2));
+        pizzas.add(new Pizza("Hawaiian", toppings2));*/
+        pizzas = PizzaListFragment.pizzaArrayList;
 
-        final Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
+        typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 
         ArrayList<String> types = new ArrayList<>();
         types.add("-- Custom --");
