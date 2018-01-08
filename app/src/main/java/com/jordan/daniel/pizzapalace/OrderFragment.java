@@ -325,8 +325,8 @@ public class OrderFragment extends Fragment {
         }
         total = cost * 1.13;
 
-        costText.setText("$"+cost);
-        totalText.setText("$"+total);
+        costText.setText("$"+String.format("%.2f", cost));
+        totalText.setText("$"+String.format("%.2f", total));
     }
 
     /**
