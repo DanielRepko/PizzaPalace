@@ -43,6 +43,10 @@ public class PizzaListFragment extends Fragment {
     ListView list;
     FragmentManager fm;
 
+    /**
+     * value is set to the index number of the selected
+     * list item plus one
+     */
     public static int itemChosen;
 
     public PizzaListFragment() {

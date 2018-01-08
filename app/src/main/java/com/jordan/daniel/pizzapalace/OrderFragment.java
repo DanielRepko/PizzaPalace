@@ -243,6 +243,25 @@ public class OrderFragment extends Fragment {
 
             }
         });
+        /**
+         * this try block runs whenever the Order Page is loaded and checks to see if
+         * the itemChosen variable has been set by PizzaListFragment
+         *
+         * if the variable is yet to be instantiated, then the NullPointerException is
+         * caught and the program continues running
+         *
+         * if the variable has been set, then it sets the selection of typeSpinner
+         * by item id by using itemChosen. It then sets itemChosen to -1 to "reset"
+         * the value
+         */
+        try {
+            if(PizzaListFragment.itemChosen != -1) {
+                typeSpinner.setSelection(PizzaListFragment.itemChosen);
+                PizzaListFragment.itemChosen = -1;
+            }
+        } catch(NullPointerException e){
+            e.printStackTrace();
+        }
 
 
 
