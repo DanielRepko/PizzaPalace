@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
+import com.jordan.daniel.pizzapalace.JavaBean.PizzaList;
 
 import java.util.ArrayList;
 
@@ -165,7 +166,7 @@ public class OrderFragment extends Fragment {
         toppings2.add("Pineapple");
         toppings2.add("Ham");
         pizzas.add(new Pizza("Hawaiian", toppings2));*/
-        pizzas = PizzaListFragment.pizzaArrayList;
+        pizzas = new PizzaList();
 
         typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 

@@ -27,8 +27,8 @@ public class PizzaList extends ArrayList {
 
         //creating Pizza object for Meat Lover's and adding it to PizzaList
         ArrayList<String> hawaiianPizza = new ArrayList<String>();
+        hawaiianPizza.add(this.toppings.get(2));
         hawaiianPizza.add(this.toppings.get(3));
-        hawaiianPizza.add(this.toppings.get(4));
         this.add(new Pizza("Hawaiian", hawaiianPizza));
 
         //creating Pizza object for Meat Lover's and adding it to PizzaList
@@ -75,6 +75,7 @@ public class PizzaList extends ArrayList {
      * is used to fill the toppings ArrayList
      */
     private void fillToppings(){
+        this.toppings = new ArrayList<>();
         this.toppings.add("Pepperoni");
         this.toppings.add("Bacon");
         this.toppings.add("Ham");

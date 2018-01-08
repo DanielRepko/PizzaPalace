@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
+import com.jordan.daniel.pizzapalace.JavaBean.PizzaList;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,6 @@ public class PizzaListFragment extends Fragment {
 
     ListView list;
     FragmentManager fm;
-    public static ArrayList<Pizza> pizzaArrayList;
 
     public PizzaListFragment() {
         // Required empty public constructor
@@ -81,55 +81,7 @@ public class PizzaListFragment extends Fragment {
 
         list = (ListView) view.findViewById(R.id.pizzaList);
 
-        pizzaArrayList = new ArrayList<Pizza>();
-
-        ArrayList<String> meatLoversPizza = new ArrayList<String>();
-        meatLoversPizza.add("Pepperoni");
-        meatLoversPizza.add("Bacon");
-        meatLoversPizza.add("Ham");
-        meatLoversPizza.add("Hamburger");
-        meatLoversPizza.add("Sausage");
-        pizzaArrayList.add(new Pizza("Meat Lover's", meatLoversPizza));
-
-        ArrayList<String> hawaiianPizza = new ArrayList<String>();
-        hawaiianPizza.add("Pineapple");
-        hawaiianPizza.add("Ham");
-        pizzaArrayList.add(new Pizza("Hawaiian", hawaiianPizza));
-
-        ArrayList<String> motherlodePizza = new ArrayList<String>();
-        motherlodePizza.add("Pepperoni");
-        motherlodePizza.add("Bacon");
-        motherlodePizza.add("Ham");
-        motherlodePizza.add("Pineapple");
-        motherlodePizza.add("Hamburger");
-        motherlodePizza.add("Mushrooms");
-        motherlodePizza.add("Anchovies");
-        motherlodePizza.add("Green Olives");
-        motherlodePizza.add("Black Olives");
-        motherlodePizza.add("Peppers");
-        motherlodePizza.add("Onions");
-        motherlodePizza.add("Sausage");
-        motherlodePizza.add("Spinach");
-        motherlodePizza.add("Extra Cheese");
-        pizzaArrayList.add(new Pizza("The Motherlode", motherlodePizza));
-
-        ArrayList<String> vegetarianPizza = new ArrayList<String>();
-        vegetarianPizza.add("Pineapple");
-        vegetarianPizza.add("Mushrooms");
-        vegetarianPizza.add("Green Olives");
-        vegetarianPizza.add("Black Olives");
-        vegetarianPizza.add("Peppers");
-        vegetarianPizza.add("Onions");
-        vegetarianPizza.add("Spinach");
-        pizzaArrayList.add(new Pizza("Vegetarian", vegetarianPizza));
-
-        ArrayList<String> cheeseburgerPizza = new ArrayList<String>();
-        cheeseburgerPizza.add("Bacon");
-        cheeseburgerPizza.add("Hamburger");
-        cheeseburgerPizza.add("Mushrooms");
-        cheeseburgerPizza.add("Onions");
-        cheeseburgerPizza .add("Extra Cheese");
-        pizzaArrayList.add(new Pizza("Cheeseburger", cheeseburgerPizza));
+        ArrayList<Pizza> pizzaArrayList = new PizzaList();
 
         CustomAdapter adapter = new CustomAdapter(getContext(), pizzaArrayList);
         list.setAdapter(adapter);
