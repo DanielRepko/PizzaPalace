@@ -97,6 +97,7 @@ public class PizzaListFragment extends Fragment {
                 fm = getFragmentManager();
                 PizzaListFragment.itemChosen = i + 1;
                 FragmentTransaction trans = fm.beginTransaction();
+                trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
                 trans.replace(R.id.content, new OrderFragment());
                 trans.addToBackStack(null);
                 trans.commit();
