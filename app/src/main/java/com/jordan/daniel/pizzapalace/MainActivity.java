@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction trans = fm.beginTransaction();
 
         //setting the transition animations to use when switching between fragments
-        trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+        trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
 
         if (id == R.id.nav_home){
             trans.replace(R.id.content, new MainFragment());
