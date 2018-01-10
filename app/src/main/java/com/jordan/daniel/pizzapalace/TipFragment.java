@@ -91,7 +91,7 @@ public class TipFragment extends Fragment {
                     double cost = Double.parseDouble(editCost.getText().toString());
                     double percent = Double.parseDouble(editPercent.getText().toString()) / 100;
                     double total = cost * percent;
-                    tipTotal.setText(Double.toString(total));
+                    tipTotal.setText(String.format("%.2f", total));
                 }
             }
         });
