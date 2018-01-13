@@ -1,6 +1,7 @@
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
+import android.graphics.drawable.DrawableContainer;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -69,9 +70,8 @@ public class DealFragment extends Fragment {
          * setting the text for the textview inside the viewpager
          */
         ImageView dealImage = (ImageView) view.findViewById(R.id.dealImage);
-        Image image = ;
         if(mParam1 != null){
-            dealImage.;
+            dealImage.setImageResource(Integer.parseInt(mParam1));
         }
 
         return view;
