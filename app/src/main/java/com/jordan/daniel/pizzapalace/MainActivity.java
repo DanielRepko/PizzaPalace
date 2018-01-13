@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
                     ContactFragment.OnFragmentInteractionListener,
                     OrderFragment.OnFragmentInteractionListener,
                     TipFragment.OnFragmentInteractionListener,
-                    PizzaListFragment.OnFragmentInteractionListener {
+                    PizzaListFragment.OnFragmentInteractionListener,
+                    CreditsFragment.OnFragmentInteractionListener{
 
 
     FragmentManager fm;
@@ -142,6 +143,10 @@ public class MainActivity extends AppCompatActivity
             if(intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
+        } else if (id == R.id.nav_credits) {
+            trans.replace(R.id.content, new CreditsFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
