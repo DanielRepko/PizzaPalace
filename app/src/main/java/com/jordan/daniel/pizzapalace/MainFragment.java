@@ -89,8 +89,7 @@ public class MainFragment extends Fragment {
          *
          * @param position
          * @return the content for the case specified by the position
-         * final product will return images labeled for reuse and modification
-         * but for now will return textviews
+         *
          */
         public Fragment getItem(int position){
             switch(position){
