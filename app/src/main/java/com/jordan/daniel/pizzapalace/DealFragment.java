@@ -1,12 +1,14 @@
 package com.jordan.daniel.pizzapalace;
 
 import android.content.Context;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -26,7 +28,6 @@ public class DealFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,9 +68,10 @@ public class DealFragment extends Fragment {
         /**
          * setting the text for the textview inside the viewpager
          */
-        TextView dealText = (TextView) view.findViewById(R.id.dealText);
+        ImageView dealImage = (ImageView) view.findViewById(R.id.dealImage);
+        Image image = ;
         if(mParam1 != null){
-            dealText.setText(mParam1);
+            dealImage.;
         }
 
         return view;
