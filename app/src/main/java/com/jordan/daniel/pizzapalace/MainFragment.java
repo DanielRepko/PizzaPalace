@@ -30,7 +30,7 @@ public class MainFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -94,11 +94,11 @@ public class MainFragment extends Fragment {
          */
         public Fragment getItem(int position){
             switch(position){
-                case 0: return DealFragment.newInstance("placeholder2");
-                case 1: return DealFragment.newInstance("placeholder2");
-                case 2: return DealFragment.newInstance("placeholder3");
-                case 3: return DealFragment.newInstance("placeholder4");
-                default: return DealFragment.newInstance("placeholder default");
+                case 0: return DealFragment.newInstance(R.drawable.cheese_tomato+"");
+                case 1: return DealFragment.newInstance(R.drawable.fancy_pizza+"");
+                case 2: return DealFragment.newInstance(R.drawable.pepperoni+"");
+                case 3: return DealFragment.newInstance(R.drawable.pizza_hawaiian+"");
+                default: return DealFragment.newInstance("");
             }
         }
 
