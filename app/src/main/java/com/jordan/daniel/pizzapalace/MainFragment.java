@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 /**
@@ -29,6 +30,7 @@ public class MainFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    
 
     private OnFragmentInteractionListener mListener;
 
@@ -92,7 +94,7 @@ public class MainFragment extends Fragment {
          */
         public Fragment getItem(int position){
             switch(position){
-                case 0: return DealFragment.newInstance("placeholder1");
+                case 0: return DealFragment.newInstance("placeholder2");
                 case 1: return DealFragment.newInstance("placeholder2");
                 case 2: return DealFragment.newInstance("placeholder3");
                 case 3: return DealFragment.newInstance("placeholder4");
