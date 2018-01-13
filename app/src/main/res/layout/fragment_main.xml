@@ -11,11 +11,13 @@
         android:layout_height="match_parent"
         android:layout_weight="2" />
 
-    <TextView
+    <EditText
         android:id="@+id/aboutUsTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
+        android:editable="false"
+        android:inputType="none"
         android:text="@string/about_us_title"
         android:textAlignment="center"
         android:textAllCaps="false"
