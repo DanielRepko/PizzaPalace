@@ -69,6 +69,9 @@
 
     <string name="order_submit_button">Submit</string>
 
+    <!-- Credits page Strings -->
+    <string name="credits_title">Credits</string>
+
     <!--Preferences Strings-->
     <string name="preferences_tip_title">Default Tip Percent</string>
     <string name="preferences_tip_summary">Always give a 5 or 15% tip? This value will be used as the
