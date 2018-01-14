@@ -50,8 +50,8 @@
         android:id="@+id/resourcesLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/credits_resource_label_bottom_margin"
+        android:layout_marginTop="@dimen/credits_resource_label_top_margin"
         android:text="@string/credits_resource_label_text"
         android:textSize="@dimen/order_label_text_size" />
 
