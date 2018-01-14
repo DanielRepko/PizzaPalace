@@ -1,0 +1,144 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jordan.daniel.pizzapalace.OrderFragment">
+
+
+    <EditText
+        android:id="@+id/orderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:freezesText="false"
+        android:inputType="none"
+        android:text="@string/order_title_text"
+        android:textAlignment="center"
+        android:textSize="@dimen/title_text_size" />
+
+    <TextView
+        android:id="@+id/sizeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_size_label"
+        android:textSize="@dimen/order_label_text_size" />
+
+    <Spinner
+        android:id="@+id/sizeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/sizeLabel" />
+
+    <TextView
+        android:id="@+id/typeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_type_label"
+        android:textSize="@dimen/order_label_text_size" />
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/toppingsLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_toppings_header"
+        android:textSize="@dimen/order_label_text_size" />
+
+    <GridView
+        android:id="@+id/toppingsGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2" />
+
+    <LinearLayout
+        android:id="@+id/paymentLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/paymentOptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_payment_method_label"
+            android:textSize="@dimen/order_label_text_size" />
+
+        <CheckBox
+            android:id="@+id/optionCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_payment_method_cash" />
+
+        <CheckBox
+            android:id="@+id/optionCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_payment_method_card" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/costLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/costLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_cost_label" />
+
+        <TextView
+            android:id="@+id/costText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/order_cost_text_left_margin"
+            android:layout_weight="1"
+            android:labelFor="@+id/costLabel"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/totalLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_total_label" />
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/order_cost_text_left_margin"
+            android:layout_weight="1"
+            android:labelFor="@+id/totalLabel"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_submit_button" />
+
+
+</LinearLayout>

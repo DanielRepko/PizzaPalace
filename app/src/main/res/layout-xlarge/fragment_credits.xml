@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jordan.daniel.pizzapalace.CreditsFragment">
+
+    <EditText
+        android:id="@+id/creditsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:freezesText="false"
+        android:inputType="none"
+        android:text="@string/credits_title"
+        android:textAlignment="center"
+        android:textSize="@dimen/title_text_size" />
+
+    <TextView
+        android:id="@+id/memberLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_member_label_text"
+        android:textSize="@dimen/order_label_text_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/member1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/credits_member1_text"
+            android:textSize="@dimen/credits_text_size" />
+
+        <TextView
+            android:id="@+id/member2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/credits_member2_text"
+            android:textSize="@dimen/credits_text_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resourcesLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/credits_resource_label_bottom_margin"
+        android:layout_marginTop="@dimen/credits_resource_label_top_margin"
+        android:text="@string/credits_resource_label_text"
+        android:textSize="@dimen/order_label_text_size" />
+
+    <TextView
+        android:id="@+id/resource1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_resource1_text"
+        android:textSize="@dimen/credits_text_size" />
+
+    <TextView
+        android:id="@+id/resource2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_resource2_text"
+        android:textSize="@dimen/credits_text_size" />
+
+    <TextView
+        android:id="@+id/resource3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_resource3_text"
+        android:textSize="@dimen/credits_text_size" />
+
+    <TextView
+        android:id="@+id/resource4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/credits_resource4_text"
+        android:textSize="@dimen/credits_text_size" />
+</LinearLayout>
