@@ -71,6 +71,9 @@
 
     <!-- Credits page Strings -->
     <string name="credits_title">Credits</string>
+    <string name="credits_member_label">Group Members</string>
+    <string name="credits_member1_text">Daniel</string>
+    <string name="credits_member2_text">Jordan</string>
 
     <!--Preferences Strings-->
     <string name="preferences_tip_title">Default Tip Percent</string>
