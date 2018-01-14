@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#ea0000</color>
     <color name="colorAccent">#ea0000</color>
     <color name="navHeader">#e0ff2f00</color>
+    <color name="viewPagerBackground">#000000</color>
 </resources>
