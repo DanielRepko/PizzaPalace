@@ -11,6 +11,8 @@
 
     <dimen name="contact_title_text_size">24sp</dimen>
 
+    <dimen name="tip_edittext_text_size">18sp</dimen>
+
     <dimen name="order_label_text_size">20sp</dimen>
     <dimen name="order_cost_text_left_margin">100dp</dimen>
 
