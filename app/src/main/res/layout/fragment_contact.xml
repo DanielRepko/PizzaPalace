@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/contact_message"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/contact_title_text_size"
         android:textStyle="bold" />
 
     <Button

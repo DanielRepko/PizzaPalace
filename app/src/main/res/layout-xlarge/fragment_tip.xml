@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:text="@string/tip_price" />
+            android:text="@string/tip_price"
+            android:textSize="@dimen/normal_text_size" />
 
         <EditText
             android:id="@+id/editCost"
@@ -36,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:text="@string/tip_percent" />
+            android:text="@string/tip_percent"
+            android:textSize="@dimen/normal_text_size" />
 
         <EditText
             android:id="@+id/editPercent"
@@ -58,7 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:text="@string/tip_total" />
+            android:text="@string/tip_total"
+            android:textSize="@dimen/normal_text_size" />
 
         <EditText
             android:id="@+id/tipTotal"
