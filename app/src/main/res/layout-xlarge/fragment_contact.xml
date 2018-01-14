@@ -11,6 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/contact_message"
         android:textAlignment="center"
         android:textSize="@dimen/contact_title_text_size"
@@ -21,6 +22,9 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_button_margin"
+        android:layout_marginTop="@dimen/contact_button_margin"
+        android:layout_weight="2"
         android:text="@string/contact_call"
         android:textSize="@dimen/normal_text_size" />
 
@@ -29,6 +33,9 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_button_margin"
+        android:layout_marginTop="@dimen/contact_button_margin"
+        android:layout_weight="2"
         android:text="@string/contact_email"
         android:textSize="@dimen/normal_text_size" />
 
@@ -37,6 +44,9 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_button_margin"
+        android:layout_marginTop="@dimen/contact_button_margin"
+        android:layout_weight="2"
         android:text="@string/contact_social_media"
         android:textSize="@dimen/normal_text_size" />
 </LinearLayout>
