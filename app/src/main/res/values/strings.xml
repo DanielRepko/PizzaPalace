@@ -72,8 +72,8 @@
     <!-- Credits page Strings -->
     <string name="credits_title">Credits</string>
     <string name="credits_member_label_text">Group Members:</string>
-    <string name="credits_member1_text">Daniel</string>
-    <string name="credits_member2_text">Jordan</string>
+    <string name="credits_member1_text">Daniel Repko</string>
+    <string name="credits_member2_text">Jordan Campbell</string>
     <string name="credits_resource_label_text">Image Resources:</string>
     <string name="credits_resource1_text">https://pixabay.com/en/pizza-cheese-tomato-2978377/</string>
     <string name="credits_resource2_text">https://pixabay.com/en/pizza-hawaiian-pizza-plate-court-1329621/</string>
