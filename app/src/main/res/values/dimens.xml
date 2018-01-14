@@ -10,5 +10,7 @@
     <dimen name="about_us_text_size">14sp</dimen>
 
     <dimen name="order_label_text_size">22sp</dimen>
-    <dimen name="topping_text_size">14dp</dimen>
+    <dimen name="topping_text_size">14sp</dimen>
+
+    <dimen name="credits_text_size">16sp</dimen>
 </resources>
