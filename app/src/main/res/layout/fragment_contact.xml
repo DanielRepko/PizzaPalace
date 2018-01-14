@@ -18,18 +18,21 @@
 
     <Button
         android:id="@+id/phoneButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_call" />
 
     <Button
         android:id="@+id/emailButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_email" />
 
     <Button
         android:id="@+id/facebookButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_social_media" />
