@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PizzaPalace</string>
+    <string name="app_name">Pizza Palace</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -68,6 +68,17 @@
     <string name="order_total_label">Total(with tax):</string>
 
     <string name="order_submit_button">Submit</string>
+
+    <!-- Credits page Strings -->
+    <string name="credits_title">Credits</string>
+    <string name="credits_member_label_text">Group Members:</string>
+    <string name="credits_member1_text">Daniel</string>
+    <string name="credits_member2_text">Jordan</string>
+    <string name="credits_resource_label_text">Image Resources:</string>
+    <string name="credits_resource1_text">https://pixabay.com/en/pizza-cheese-tomato-2978377/</string>
+    <string name="credits_resource2_text">https://pixabay.com/en/pizza-hawaiian-pizza-plate-court-1329621/</string>
+    <string name="credits_resource3_text">https://pixabay.com/en/america-american-baked-bread-1238732/</string>
+    <string name="credits_resource4_text">https://pixabay.com/en/pizza-baking-fast-food-lunch-2000614/</string>
 
     <!--Preferences Strings-->
     <string name="preferences_tip_title">Default Tip Percent</string>

@@ -6,9 +6,17 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="title_text_size">30sp</dimen>
-    <dimen name="about_us_text_size">14sp</dimen>
+    <dimen name="title_text_size">26sp</dimen>
+    <dimen name="normal_text_size">14sp</dimen>
 
-    <dimen name="order_label_text_size">22sp</dimen>
-    <dimen name="topping_text_size">14dp</dimen>
+    <dimen name="contact_title_text_size">24sp</dimen>
+
+    <dimen name="tip_edittext_text_size">18sp</dimen>
+
+    <dimen name="order_label_text_size">20sp</dimen>
+    <dimen name="order_cost_text_left_margin">100dp</dimen>
+
+    <dimen name="credits_text_size">16sp</dimen>
+    <dimen name="credits_resource_label_top_margin">20dp</dimen>
+    <dimen name="credits_resource_label_bottom_margin">10dp</dimen>
 </resources>

@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
                     ContactFragment.OnFragmentInteractionListener,
                     OrderFragment.OnFragmentInteractionListener,
                     TipFragment.OnFragmentInteractionListener,
-                    PizzaListFragment.OnFragmentInteractionListener {
+                    PizzaListFragment.OnFragmentInteractionListener,
+                    CreditsFragment.OnFragmentInteractionListener{
 
 
     FragmentManager fm;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        fab.setVisibility(View.GONE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -104,6 +106,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentTransaction trans = fm.beginTransaction();
 
+        //setting the transition animations to use when switching between fragments
+        trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
+
         if (id == R.id.nav_home){
             trans.replace(R.id.content, new MainFragment());
             trans.addToBackStack(null);
@@ -138,6 +143,10 @@ public class MainActivity extends AppCompatActivity
             if(intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
+        } else if (id == R.id.nav_credits) {
+            trans.replace(R.id.content, new CreditsFragment());
+            trans.addToBackStack(null);
+            trans.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

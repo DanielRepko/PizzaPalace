@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jordan.daniel.pizzapalace.JavaBean.Pizza;
+import com.jordan.daniel.pizzapalace.JavaBean.PizzaList;
 
 import java.util.ArrayList;
 
@@ -48,6 +49,9 @@ public class OrderFragment extends Fragment {
 
     Spinner sizeSpinner;
     GridView toppingsGridView;
+
+    ArrayList<Pizza> pizzas;
+    Spinner typeSpinner;
 
     FragmentManager fm;
 
@@ -143,27 +147,10 @@ public class OrderFragment extends Fragment {
         /**
          * ArrayList to store all of the pizza types inside of the
          * ListView on the Pizza List page
-         *
-         * NOTE: final product will loop through the ListView on the
-         * Pizza List page, but for now will be manually filled inside of
-         * OrderFragment purely for testing purposes
          */
-        final ArrayList<Pizza> pizzas = new ArrayList<>();
-        ArrayList<String> toppings1 = new ArrayList<>();
+        pizzas = new PizzaList();
 
-        toppings1.add("Pepperoni");
-        toppings1.add("Bacon");
-        toppings1.add("Ham");
-        toppings1.add("Hamburger");
-        toppings1.add("Sausage");
-        pizzas.add(new Pizza("Meat Lover's", toppings1));
-
-        ArrayList<String> toppings2 = new ArrayList<>();
-        toppings2.add("Pineapple");
-        toppings2.add("Ham");
-        pizzas.add(new Pizza("Hawaiian", toppings2));
-
-        final Spinner typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
+        typeSpinner = (Spinner) view.findViewById(R.id.typeSpinner);
 
         ArrayList<String> types = new ArrayList<>();
         types.add("-- Custom --");
@@ -256,6 +243,25 @@ public class OrderFragment extends Fragment {
 
             }
         });
+        /**
+         * this try block runs whenever the Order Page is loaded and checks to see if
+         * the itemChosen variable has been set by PizzaListFragment
+         *
+         * if the variable is yet to be instantiated, then the NullPointerException is
+         * caught and the program continues running
+         *
+         * if the variable has been set, then it sets the selection of typeSpinner
+         * by item id by using itemChosen. It then sets itemChosen to -1 to "reset"
+         * the value
+         */
+        try {
+            if(PizzaListFragment.itemChosen != -1) {
+                typeSpinner.setSelection(PizzaListFragment.itemChosen);
+                PizzaListFragment.itemChosen = -1;
+            }
+        } catch(NullPointerException e){
+            e.printStackTrace();
+        }
 
 
 
@@ -273,6 +279,7 @@ public class OrderFragment extends Fragment {
 
                 fm = getFragmentManager();
                 FragmentTransaction trans = fm.beginTransaction();
+                trans.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_back_in, R.anim.fade_back_out);
                 trans.replace(R.id.content, new MainFragment());
                 trans.addToBackStack(null);
                 trans.commit();
@@ -325,8 +332,8 @@ public class OrderFragment extends Fragment {
         }
         total = cost * 1.13;
 
-        costText.setText("$"+cost);
-        totalText.setText("$"+total);
+        costText.setText("$"+String.format("%.2f", cost));
+        totalText.setText("$"+String.format("%.2f", total));
     }
 
     /**
